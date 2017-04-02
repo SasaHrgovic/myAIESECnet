@@ -24,5 +24,7 @@ namespace Data
         [Required]
         public DateTime BirthDate { get; set; }
         public ICollection<Role> Roles { get; set; }
+        public Committee Committee { get; set; }
+        public int CommitteeId { get; set; }
     }
 }

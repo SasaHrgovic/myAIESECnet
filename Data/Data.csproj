@@ -54,6 +54,14 @@
     <Compile Include="Migrations\201703262225444_InitialModel.Designer.cs">
       <DependentUpon>201703262225444_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704022149211_AddCommitteeClass.cs" />
+    <Compile Include="Migrations\201704022149211_AddCommitteeClass.Designer.cs">
+      <DependentUpon>201704022149211_AddCommitteeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704022200512_AddForeignKeyUserCommittee.cs" />
+    <Compile Include="Migrations\201704022200512_AddForeignKeyUserCommittee.Designer.cs">
+      <DependentUpon>201704022200512_AddForeignKeyUserCommittee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +75,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703262225444_InitialModel.resx">
       <DependentUpon>201703262225444_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704022149211_AddCommitteeClass.resx">
+      <DependentUpon>201704022149211_AddCommitteeClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704022200512_AddForeignKeyUserCommittee.resx">
+      <DependentUpon>201704022200512_AddForeignKeyUserCommittee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
