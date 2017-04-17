@@ -5,14 +5,14 @@ namespace Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Data.MyAiesecNetDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Data.MyAiesecNetDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Data.MyAiesecNetDBContext context)
+        protected override void Seed(Data.MyAiesecNetDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
