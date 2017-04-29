@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic;
 
 namespace Presentation
 {
@@ -20,6 +21,13 @@ namespace Presentation
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
+            LoginLogic login = new LoginLogic();
+            if (login.Login(txtEmail.Text, txtPassword.Text))
+            {
+                frmMyAiesecNet a = new frmMyAiesecNet();
+                a.Show();
+            }
+            
         }
     }
 }
