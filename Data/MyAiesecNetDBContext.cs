@@ -12,5 +12,6 @@ namespace Data
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Committee> Committees { get; set; }
+        public DbSet<Team> Teams { get; set; }
     }
 }
