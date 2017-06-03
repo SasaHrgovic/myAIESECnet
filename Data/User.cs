@@ -26,5 +26,10 @@ namespace Data
         public ICollection<Role> Roles { get; set; }
         public Committee Committee { get; set; }
         public int CommitteeId { get; set; }
+
+        public User()
+        {
+            Roles = new HashSet<Role>();
+        }
     }
 }

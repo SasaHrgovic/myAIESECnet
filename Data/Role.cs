@@ -13,5 +13,10 @@ namespace Data
         [Required, StringLength(30)]
         public string Name { get; set; }
         public ICollection<User> Users { get; set; }
+
+        public Role()
+        {
+            Users = new HashSet<User>();
+        }
     }
 }
