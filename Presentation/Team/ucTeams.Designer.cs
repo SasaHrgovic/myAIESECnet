@@ -1,6 +1,6 @@
 ﻿namespace Presentation.Team
 {
-    partial class Teams
+    partial class ucTeams
     {
         /// <summary> 
         /// Required designer variable.
@@ -61,14 +61,15 @@
             this.btnAddTeam.Text = "Dodaj tim";
             this.btnAddTeam.UseVisualStyleBackColor = true;
             // 
-            // Teams
+            // ucTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnAddTeam);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvTeams);
-            this.Name = "Teams";
+            this.Name = "ucTeams";
             this.Size = new System.Drawing.Size(1123, 476);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             this.ResumeLayout(false);

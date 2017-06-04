@@ -61,11 +61,11 @@
     <Compile Include="Team\AddEditTeam.Designer.cs">
       <DependentUpon>AddEditTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Team\Teams.cs">
+    <Compile Include="Team\ucTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Team\Teams.Designer.cs">
-      <DependentUpon>Teams.cs</DependentUpon>
+    <Compile Include="Team\ucTeams.Designer.cs">
+      <DependentUpon>ucTeams.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -78,11 +78,14 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMyAiesecNet.resx">
+      <DependentUpon>frmMyAiesecNet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Team\AddEditTeam.resx">
       <DependentUpon>AddEditTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Team\Teams.resx">
-      <DependentUpon>Teams.cs</DependentUpon>
+    <EmbeddedResource Include="Team\ucTeams.resx">
+      <DependentUpon>ucTeams.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
