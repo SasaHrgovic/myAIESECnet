@@ -19,9 +19,11 @@ namespace Data
         public DateTime Deadline { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public Team Team { get; set; }
         public int TeamId { get; set; }
-        public ICollection<User> Users { get; set; }
+        public virtual Team Team { get; set; }
+        public int ProjectId { get; set; }
+        public virtual Project Project { get; set; }
+        public virtual ICollection<User> Users { get; set; }
 
         public Activity()
         {
