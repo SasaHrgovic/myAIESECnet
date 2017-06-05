@@ -71,11 +71,17 @@
     <Compile Include="Migrations\201706050652062_AddActivityClass.Designer.cs">
       <DependentUpon>201706050652062_AddActivityClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706052259443_AddProjectClass.cs" />
+    <Compile Include="Migrations\201706052259443_AddProjectClass.Designer.cs">
+      <DependentUpon>201706052259443_AddProjectClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDbContext.cs" />
+    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Team.cs" />
+    <Compile Include="TeamProject.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706050652062_AddActivityClass.resx">
       <DependentUpon>201706050652062_AddActivityClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706052259443_AddProjectClass.resx">
+      <DependentUpon>201706052259443_AddProjectClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
