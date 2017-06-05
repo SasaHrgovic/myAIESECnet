@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic;
 
 namespace Presentation.Team
 {
@@ -25,6 +26,13 @@ namespace Presentation.Team
         public ucTeams()
         {
             InitializeComponent();
+        }
+
+        private void ucTeams_Load(object sender, EventArgs e)
+        {
+            TeamLogic tl = new TeamLogic();
+            //dgvTeams.DataSource = tl.getTeams();
+            teamBindingSource.DataSource = tl.getTeams();
         }
     }
 }

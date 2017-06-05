@@ -20,7 +20,6 @@ namespace Data
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public Team Team { get; set; }
-        [Required]
         public int TeamId { get; set; }
         public ICollection<User> Users { get; set; }
 

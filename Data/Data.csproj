@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201704301306351_AddTeamClass.Designer.cs">
       <DependentUpon>201704301306351_AddTeamClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706050652062_AddActivityClass.cs" />
+    <Compile Include="Migrations\201706050652062_AddActivityClass.Designer.cs">
+      <DependentUpon>201706050652062_AddActivityClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,7 +79,9 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704301306351_AddTeamClass.resx">
       <DependentUpon>201704301306351_AddTeamClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706050652062_AddActivityClass.resx">
+      <DependentUpon>201706050652062_AddActivityClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

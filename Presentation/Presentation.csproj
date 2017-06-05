@@ -69,6 +69,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{66417DA0-78FA-49E7-A5CD-BFF142391A86}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{39412e36-872c-4d6b-afea-b8c6a3491b18}</Project>
       <Name>Logic</Name>
@@ -87,6 +91,10 @@
     <EmbeddedResource Include="Team\ucTeams.resx">
       <DependentUpon>ucTeams.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\Data.Team.datasource" />
+    <None Include="Properties\DataSources\Logic.TeamLogic.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
