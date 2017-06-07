@@ -1,4 +1,4 @@
-﻿namespace Presentation.Team
+﻿namespace Presentation.TeamViews
 {
     partial class ucTeams
     {

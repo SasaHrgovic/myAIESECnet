@@ -1,4 +1,4 @@
-﻿namespace Presentation.Team
+﻿namespace Presentation.TeamViews
 {
     partial class frmAddTeam
     {
@@ -112,6 +112,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmAddTeam
             // 

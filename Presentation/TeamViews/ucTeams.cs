@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
 
-namespace Presentation.Team
+namespace Presentation.TeamViews
 {
     public partial class ucTeams : UserControl
     {
@@ -28,16 +28,23 @@ namespace Presentation.Team
             InitializeComponent();
         }
 
-        private void ucTeams_Load(object sender, EventArgs e)
+        private void ShowTeams()
         {
+            teamBindingSource.DataSource = null;
             TeamLogic tl = new TeamLogic();
             teamBindingSource.DataSource = tl.getTeams();
+        }
+
+        private void ucTeams_Load(object sender, EventArgs e)
+        {
+            ShowTeams();
         }
 
         private void btnAddTeam_Click(object sender, EventArgs e)
         {
             frmAddTeam f = new frmAddTeam();
-            f.Show();
+            f.ShowDialog();
+            ShowTeams();
         }
     }
 }

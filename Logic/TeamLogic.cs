@@ -19,5 +19,15 @@ namespace Logic
                 
             }
         }
+
+        public void AddTeam(Team newTeam)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                newTeam.CommitteeId = 1;
+                db.Teams.Add(newTeam);
+                db.SaveChanges();
+            }
+        }
     }
 }

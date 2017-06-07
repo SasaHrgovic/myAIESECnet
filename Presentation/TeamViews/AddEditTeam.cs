@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentation.Team
+namespace Presentation.TeamViews
 {
     public partial class AddEditTeam : UserControl
     {
