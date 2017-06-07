@@ -19,11 +19,21 @@ namespace Presentation
             InitializeComponent();
         }
 
+        private void ClearLabels()
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(Label))
+                    c.Font = new Font(lblTeams.Font.Name, lblTeams.Font.SizeInPoints, FontStyle.Regular);
+            }
+        }
+
         private void lblTeams_Click(object sender, EventArgs e)
         {
-            if(!pnlContainer.Controls.Contains(ucTeams.Instance))
+            ClearLabels();
+            lblTeams.Font = new Font(lblTeams.Font.Name, lblTeams.Font.SizeInPoints, FontStyle.Underline);
+            if (!pnlContainer.Controls.Contains(ucTeams.Instance))
             {
-                lblTeams.Font = new Font(lblTeams.Font.Name, lblTeams.Font.SizeInPoints, FontStyle.Underline);
                 pnlContainer.Controls.Add(ucTeams.Instance);
                 ucTeams.Instance.Dock = DockStyle.Fill;
                 ucTeams.Instance.BringToFront();
@@ -36,9 +46,10 @@ namespace Presentation
 
         private void lblProjects_Click(object sender, EventArgs e)
         {
+            ClearLabels();
+            lblProjects.Font = new Font(lblProjects.Font.Name, lblProjects.Font.SizeInPoints, FontStyle.Underline);
             if (!pnlContainer.Controls.Contains(ucProjects.Instance))
             {
-                lblProjects.Font = new Font(lblProjects.Font.Name, lblProjects.Font.SizeInPoints, FontStyle.Underline);
                 pnlContainer.Controls.Add(ucProjects.Instance);
                 ucProjects.Instance.Dock = DockStyle.Fill;
                 ucProjects.Instance.BringToFront();
