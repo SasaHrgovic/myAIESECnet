@@ -9,29 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
 
-namespace Presentation.Team
+namespace Presentation.Project
 {
-    public partial class ucTeams : UserControl
+    public partial class ucProjects : UserControl
     {
-        private static ucTeams _instance;
-        public static ucTeams Instance
+        private static ucProjects _instance;
+        public static ucProjects Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new ucTeams();
+                    _instance = new ucProjects();
                 return _instance;
             }
         }
-        public ucTeams()
+        public ucProjects()
         {
             InitializeComponent();
         }
 
-        private void ucTeams_Load(object sender, EventArgs e)
+        private void ucProjects_Load(object sender, EventArgs e)
         {
-            TeamLogic tl = new TeamLogic();
-            teamBindingSource.DataSource = tl.getTeams();
+            ProjectLogic pl = new ProjectLogic();
+            projectBindingSource.DataSource =  pl.getProjects();
         }
     }
 }

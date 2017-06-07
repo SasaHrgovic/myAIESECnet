@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation.Team;
+using Presentation.Project;
 
 namespace Presentation
 {
@@ -30,6 +31,21 @@ namespace Presentation
             else
             {
                 ucTeams.Instance.BringToFront();
+            }
+        }
+
+        private void lblProjects_Click(object sender, EventArgs e)
+        {
+            if (!pnlContainer.Controls.Contains(ucProjects.Instance))
+            {
+                lblProjects.Font = new Font(lblProjects.Font.Name, lblProjects.Font.SizeInPoints, FontStyle.Underline);
+                pnlContainer.Controls.Add(ucProjects.Instance);
+                ucProjects.Instance.Dock = DockStyle.Fill;
+                ucProjects.Instance.BringToFront();
+            }
+            else
+            {
+                ucProjects.Instance.BringToFront();
             }
         }
     }

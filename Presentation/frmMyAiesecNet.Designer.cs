@@ -31,7 +31,7 @@
             this.lblHome = new System.Windows.Forms.Label();
             this.lblTeams = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProjects = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHome
@@ -66,16 +66,17 @@
             this.pnlContainer.Size = new System.Drawing.Size(811, 350);
             this.pnlContainer.TabIndex = 2;
             // 
-            // label1
+            // lblProjects
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(190, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Projekti";
+            this.lblProjects.AutoSize = true;
+            this.lblProjects.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjects.Location = new System.Drawing.Point(190, 18);
+            this.lblProjects.Name = "lblProjects";
+            this.lblProjects.Size = new System.Drawing.Size(84, 25);
+            this.lblProjects.TabIndex = 3;
+            this.lblProjects.Text = "Projekti";
+            this.lblProjects.Click += new System.EventHandler(this.lblProjects_Click);
             // 
             // frmMyAiesecNet
             // 
@@ -83,7 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(840, 422);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProjects);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblTeams);
             this.Controls.Add(this.lblHome);
@@ -99,6 +100,6 @@
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label lblTeams;
         private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProjects;
     }
 }
