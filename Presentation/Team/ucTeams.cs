@@ -33,5 +33,11 @@ namespace Presentation.Team
             TeamLogic tl = new TeamLogic();
             teamBindingSource.DataSource = tl.getTeams();
         }
+
+        private void btnAddTeam_Click(object sender, EventArgs e)
+        {
+            frmAddTeam f = new frmAddTeam();
+            f.Show();
+        }
     }
 }

@@ -114,12 +114,13 @@
             // 
             // btnAddTeam
             // 
-            this.btnAddTeam.Location = new System.Drawing.Point(1016, 332);
+            this.btnAddTeam.Location = new System.Drawing.Point(1016, 326);
             this.btnAddTeam.Name = "btnAddTeam";
             this.btnAddTeam.Size = new System.Drawing.Size(75, 23);
             this.btnAddTeam.TabIndex = 2;
             this.btnAddTeam.Text = "Dodaj tim";
             this.btnAddTeam.UseVisualStyleBackColor = true;
+            this.btnAddTeam.Click += new System.EventHandler(this.btnAddTeam_Click);
             // 
             // ucTeams
             // 

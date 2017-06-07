@@ -26,6 +26,7 @@ namespace Presentation
             {
                 frmMyAiesecNet a = new frmMyAiesecNet();
                 a.Show();
+                this.Visible = false;
             }
             
         }

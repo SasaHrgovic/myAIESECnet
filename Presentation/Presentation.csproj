@@ -67,6 +67,12 @@
     <Compile Include="Team\AddEditTeam.Designer.cs">
       <DependentUpon>AddEditTeam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Team\frmAddTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Team\frmAddTeam.Designer.cs">
+      <DependentUpon>frmAddTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Team\ucTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Team\AddEditTeam.resx">
       <DependentUpon>AddEditTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Team\frmAddTeam.resx">
+      <DependentUpon>frmAddTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Team\ucTeams.resx">
       <DependentUpon>ucTeams.cs</DependentUpon>
