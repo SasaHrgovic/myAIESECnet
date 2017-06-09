@@ -29,5 +29,28 @@ namespace Logic
                 db.SaveChanges();
             }
         }
+
+        public void UpdateTeam(Team teamToUpdate, Team newTeam)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                db.Teams.Attach(teamToUpdate);
+                teamToUpdate.Name = newTeam.Name;
+                teamToUpdate.Description = newTeam.Description;
+                teamToUpdate.Start = newTeam.Start;
+                teamToUpdate.End = newTeam.End;
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteTeam(Team teamToUpdate)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                db.Teams.Attach(teamToUpdate);
+                db.Teams.Remove(teamToUpdate);
+                db.SaveChanges();
+            }
+        }
     }
 }

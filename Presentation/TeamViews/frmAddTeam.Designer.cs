@@ -37,6 +37,7 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.lblEnd = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDeleteTeam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -110,15 +111,26 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Dodaj";
+            this.btnAdd.Text = "Spremi";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDeleteTeam
+            // 
+            this.btnDeleteTeam.Location = new System.Drawing.Point(25, 313);
+            this.btnDeleteTeam.Name = "btnDeleteTeam";
+            this.btnDeleteTeam.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteTeam.TabIndex = 9;
+            this.btnDeleteTeam.Text = "Izbriši";
+            this.btnDeleteTeam.UseVisualStyleBackColor = true;
+            this.btnDeleteTeam.Click += new System.EventHandler(this.btnDeleteTeam_Click);
             // 
             // frmAddTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 530);
+            this.Controls.Add(this.btnDeleteTeam);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.dtpEnd);
@@ -130,6 +142,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmAddTeam";
             this.Text = "Dodaj novi tim";
+            this.Load += new System.EventHandler(this.frmAddTeam_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +159,6 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDeleteTeam;
     }
 }

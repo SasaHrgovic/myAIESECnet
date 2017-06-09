@@ -39,6 +39,7 @@
             this.teamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddTeam = new System.Windows.Forms.Button();
+            this.btnUpdateTeam = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -122,11 +123,22 @@
             this.btnAddTeam.UseVisualStyleBackColor = true;
             this.btnAddTeam.Click += new System.EventHandler(this.btnAddTeam_Click);
             // 
+            // btnUpdateTeam
+            // 
+            this.btnUpdateTeam.Location = new System.Drawing.Point(926, 326);
+            this.btnUpdateTeam.Name = "btnUpdateTeam";
+            this.btnUpdateTeam.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateTeam.TabIndex = 3;
+            this.btnUpdateTeam.Text = "Ažuriraj";
+            this.btnUpdateTeam.UseVisualStyleBackColor = true;
+            this.btnUpdateTeam.Click += new System.EventHandler(this.btnUpdateTeam_Click);
+            // 
             // ucTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnUpdateTeam);
             this.Controls.Add(this.btnAddTeam);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvTeams);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn committeeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnUpdateTeam;
     }
 }

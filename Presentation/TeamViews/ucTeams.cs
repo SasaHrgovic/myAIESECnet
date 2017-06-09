@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
+using Data;
 
 namespace Presentation.TeamViews
 {
@@ -43,6 +44,13 @@ namespace Presentation.TeamViews
         private void btnAddTeam_Click(object sender, EventArgs e)
         {
             frmAddTeam f = new frmAddTeam();
+            f.ShowDialog();
+            ShowTeams();
+        }
+
+        private void btnUpdateTeam_Click(object sender, EventArgs e)
+        {
+            frmAddTeam f = new frmAddTeam(teamBindingSource.Current as Team);
             f.ShowDialog();
             ShowTeams();
         }
