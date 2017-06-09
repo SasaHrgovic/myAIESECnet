@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMyAiesecNet));
             this.lblHome = new System.Windows.Forms.Label();
             this.lblTeams = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblProjects = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHome
@@ -78,18 +81,32 @@
             this.lblProjects.Text = "Projekti";
             this.lblProjects.Click += new System.EventHandler(this.lblProjects_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Presentation.Properties.Resources.Aiesec_blue_1;
+            this.pictureBox1.Location = new System.Drawing.Point(610, 423);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(218, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMyAiesecNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(840, 422);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(840, 471);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblProjects);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.lblTeams);
             this.Controls.Add(this.lblHome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMyAiesecNet";
             this.Text = "frmMyAiesecNet";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +118,6 @@
         private System.Windows.Forms.Label lblTeams;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Label lblProjects;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

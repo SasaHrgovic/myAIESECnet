@@ -61,6 +61,11 @@
       <DependentUpon>ucProjects.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TeamViews\AddEditTeam.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +105,10 @@
     <EmbeddedResource Include="Project\ucProjects.resx">
       <DependentUpon>ucProjects.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeamViews\AddEditTeam.resx">
       <DependentUpon>AddEditTeam.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +123,9 @@
     <None Include="Properties\DataSources\Data.Project.datasource" />
     <None Include="Properties\DataSources\Data.Team.datasource" />
     <None Include="Properties\DataSources\Logic.TeamLogic.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aiesec-blue-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
