@@ -10,7 +10,7 @@ namespace Logic
 {
     public class TeamLogic
     {
-        public List<Team> getTeams()
+        public List<Team> Get()
         {
             using(MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -20,7 +20,7 @@ namespace Logic
             }
         }
 
-        public void AddTeam(Team newTeam)
+        public void Add(Team newTeam)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -30,7 +30,7 @@ namespace Logic
             }
         }
 
-        public void UpdateTeam(Team teamToUpdate, Team newTeam)
+        public void Update(Team teamToUpdate, Team newTeam)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -43,7 +43,7 @@ namespace Logic
             }
         }
 
-        public void DeleteTeam(Team teamToUpdate)
+        public void Delete(Team teamToUpdate)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {

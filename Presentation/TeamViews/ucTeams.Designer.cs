@@ -40,8 +40,11 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.btnUpdateTeam = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTeamMembers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTeams
@@ -54,6 +57,7 @@
             this.dgvTeams.AutoGenerateColumns = false;
             this.dgvTeams.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTeams.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvTeams.BackgroundColor = System.Drawing.Color.White;
             this.dgvTeams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeams.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -68,7 +72,7 @@
             this.dgvTeams.MultiSelect = false;
             this.dgvTeams.Name = "dgvTeams";
             this.dgvTeams.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTeams.Size = new System.Drawing.Size(1056, 238);
+            this.dgvTeams.Size = new System.Drawing.Size(668, 186);
             this.dgvTeams.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -123,7 +127,8 @@
             // 
             // btnAddTeam
             // 
-            this.btnAddTeam.Location = new System.Drawing.Point(1016, 326);
+            this.btnAddTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTeam.Location = new System.Drawing.Point(628, 262);
             this.btnAddTeam.Name = "btnAddTeam";
             this.btnAddTeam.Size = new System.Drawing.Size(75, 23);
             this.btnAddTeam.TabIndex = 2;
@@ -133,7 +138,8 @@
             // 
             // btnUpdateTeam
             // 
-            this.btnUpdateTeam.Location = new System.Drawing.Point(926, 326);
+            this.btnUpdateTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateTeam.Location = new System.Drawing.Point(547, 262);
             this.btnUpdateTeam.Name = "btnUpdateTeam";
             this.btnUpdateTeam.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateTeam.TabIndex = 3;
@@ -141,20 +147,52 @@
             this.btnUpdateTeam.UseVisualStyleBackColor = true;
             this.btnUpdateTeam.Click += new System.EventHandler(this.btnUpdateTeam_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(743, 70);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(346, 186);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // lblTeamMembers
+            // 
+            this.lblTeamMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTeamMembers.AutoSize = true;
+            this.lblTeamMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTeamMembers.Location = new System.Drawing.Point(739, 34);
+            this.lblTeamMembers.Name = "lblTeamMembers";
+            this.lblTeamMembers.Size = new System.Drawing.Size(72, 24);
+            this.lblTeamMembers.TabIndex = 5;
+            this.lblTeamMembers.Text = "Članovi";
+            // 
             // ucTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.lblTeamMembers);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUpdateTeam);
             this.Controls.Add(this.btnAddTeam);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvTeams);
             this.Name = "ucTeams";
-            this.Size = new System.Drawing.Size(1123, 476);
+            this.Size = new System.Drawing.Size(1123, 424);
             this.Load += new System.EventHandler(this.ucTeams_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn committeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnUpdateTeam;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblTeamMembers;
     }
 }

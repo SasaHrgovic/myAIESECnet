@@ -34,6 +34,8 @@
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblProjects = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblActivities = new System.Windows.Forms.Label();
+            this.lblCommitties = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +64,12 @@
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlContainer.Location = new System.Drawing.Point(17, 60);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(811, 350);
+            this.pnlContainer.Size = new System.Drawing.Size(986, 426);
             this.pnlContainer.TabIndex = 2;
             // 
             // lblProjects
@@ -85,19 +88,43 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Presentation.Properties.Resources.Aiesec_blue_1;
-            this.pictureBox1.Location = new System.Drawing.Point(610, 423);
+            this.pictureBox1.Location = new System.Drawing.Point(785, 507);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // lblActivities
+            // 
+            this.lblActivities.AutoSize = true;
+            this.lblActivities.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivities.Location = new System.Drawing.Point(280, 18);
+            this.lblActivities.Name = "lblActivities";
+            this.lblActivities.Size = new System.Drawing.Size(105, 25);
+            this.lblActivities.TabIndex = 5;
+            this.lblActivities.Text = "Aktivnosti";
+            // 
+            // lblCommitties
+            // 
+            this.lblCommitties.AutoSize = true;
+            this.lblCommitties.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCommitties.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommitties.Location = new System.Drawing.Point(391, 18);
+            this.lblCommitties.Name = "lblCommitties";
+            this.lblCommitties.Size = new System.Drawing.Size(76, 25);
+            this.lblCommitties.TabIndex = 6;
+            this.lblCommitties.Text = "Odbori";
+            // 
             // frmMyAiesecNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(840, 471);
+            this.ClientSize = new System.Drawing.Size(1015, 555);
+            this.Controls.Add(this.lblCommitties);
+            this.Controls.Add(this.lblActivities);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblProjects);
             this.Controls.Add(this.pnlContainer);
@@ -119,5 +146,7 @@
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Label lblProjects;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblActivities;
+        private System.Windows.Forms.Label lblCommitties;
     }
 }

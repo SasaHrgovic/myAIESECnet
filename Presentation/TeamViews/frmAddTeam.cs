@@ -49,9 +49,9 @@ namespace Presentation.TeamViews
             newTeam.End = dtpEnd.Value;
 
             if (_teamToUpdate == null)
-                tl.AddTeam(newTeam);
+                tl.Add(newTeam);
             else
-                tl.UpdateTeam(_teamToUpdate, newTeam);
+                tl.Update(_teamToUpdate, newTeam);
 
             Close();
         }
@@ -61,7 +61,7 @@ namespace Presentation.TeamViews
             if (MessageBox.Show("Jeste li sigurni?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 TeamLogic tl = new TeamLogic();
-                tl.DeleteTeam(_teamToUpdate);
+                tl.Delete(_teamToUpdate);
                 Close();
             }
         }

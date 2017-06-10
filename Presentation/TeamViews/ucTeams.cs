@@ -33,7 +33,7 @@ namespace Presentation.TeamViews
         {
             teamBindingSource.DataSource = null;
             TeamLogic tl = new TeamLogic();
-            teamBindingSource.DataSource = tl.getTeams();
+            teamBindingSource.DataSource = tl.Get();
         }
 
         private void ucTeams_Load(object sender, EventArgs e)
