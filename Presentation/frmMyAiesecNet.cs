@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentation.TeamViews;
-using Presentation.Project;
+using Presentation.ProjectViews;
+using Logic;
 
 namespace Presentation
 {
@@ -57,6 +58,15 @@ namespace Presentation
             else
             {
                 ucProjects.Instance.BringToFront();
+            }
+        }
+
+        private void frmMyAiesecNet_Load(object sender, EventArgs e)
+        {
+            label1.Text = Session.userId.ToString();
+            if (Session.roleId == 2)
+            {
+                lblCommitties.Visible = false;
             }
         }
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
 
-namespace Presentation.Project
+namespace Presentation.ProjectViews
 {
     public partial class ucProjects : UserControl
     {
@@ -28,10 +28,23 @@ namespace Presentation.Project
             InitializeComponent();
         }
 
+        private void ShowProjects()
+        {
+            projectBindingSource.DataSource = null;
+            ProjectLogic pl = new ProjectLogic();
+            projectBindingSource.DataSource = pl.Get();
+        }
+
         private void ucProjects_Load(object sender, EventArgs e)
         {
-            ProjectLogic pl = new ProjectLogic();
-            projectBindingSource.DataSource =  pl.getProjects();
+            ShowProjects();
+        }
+
+        private void btnAddProject_Click(object sender, EventArgs e)
+        {
+            frmAddProject f = new frmAddProject();
+            f.ShowDialog();
+            ShowProjects();
         }
     }
 }

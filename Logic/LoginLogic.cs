@@ -8,9 +8,16 @@ namespace Logic
 {
     public class LoginLogic
     {
+        private void SetToSession()
+        {
+            Session.userId = 1;
+            Session.committeeId = 1;
+            Session.roleId = 2;
+        }
 
         public bool Login(string email, string password)
         {
+            SetToSession();
             return true;
         }
     }

@@ -54,10 +54,16 @@
     <Compile Include="frmMyAiesecNet.Designer.cs">
       <DependentUpon>frmMyAiesecNet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Project\ucProjects.cs">
+    <Compile Include="ProjectViews\frmAddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectViews\frmAddProject.Designer.cs">
+      <DependentUpon>frmAddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectViews\ucProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Project\ucProjects.Designer.cs">
+    <Compile Include="ProjectViews\ucProjects.Designer.cs">
       <DependentUpon>ucProjects.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,7 +108,10 @@
     <EmbeddedResource Include="frmMyAiesecNet.resx">
       <DependentUpon>frmMyAiesecNet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Project\ucProjects.resx">
+    <EmbeddedResource Include="ProjectViews\frmAddProject.resx">
+      <DependentUpon>frmAddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectViews\ucProjects.resx">
       <DependentUpon>ucProjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
