@@ -12,8 +12,8 @@ namespace Data
         public byte Id { get; set; }
         [Required, StringLength(30)]
         public string Name { get; set; }
-        public ICollection<User> Users { get; set; }
-        public ICollection<Position> Positions { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Position> Positions { get; set; }
 
         public Role()
         {
