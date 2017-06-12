@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201706052259443_AddProjectClass.Designer.cs">
       <DependentUpon>201706052259443_AddProjectClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706122049017_AddRestOfTheModel.cs" />
+    <Compile Include="Migrations\201706122049017_AddRestOfTheModel.Designer.cs">
+      <DependentUpon>201706122049017_AddRestOfTheModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDbContext.cs" />
     <Compile Include="Position.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706052259443_AddProjectClass.resx">
       <DependentUpon>201706052259443_AddProjectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706122049017_AddRestOfTheModel.resx">
+      <DependentUpon>201706122049017_AddRestOfTheModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
