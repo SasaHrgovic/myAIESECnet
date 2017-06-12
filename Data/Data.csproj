@@ -51,6 +51,11 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="Committee.cs" />
+    <Compile Include="Conference.cs" />
+    <Compile Include="ConferenceUser.cs" />
+    <Compile Include="Meeting.cs" />
+    <Compile Include="MeetingType.cs" />
+    <Compile Include="MeetingUser.cs" />
     <Compile Include="Migrations\201703262225444_InitialModel.cs" />
     <Compile Include="Migrations\201703262225444_InitialModel.Designer.cs">
       <DependentUpon>201703262225444_InitialModel.cs</DependentUpon>
@@ -77,12 +82,14 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDbContext.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TeamProject.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserTeam.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

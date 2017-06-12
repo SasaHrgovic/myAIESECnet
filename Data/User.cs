@@ -23,16 +23,22 @@ namespace Data
         public string PhoneNumber { get; set; }
         [Required]
         public DateTime BirthDate { get; set; }
-        public ICollection<Role> Roles { get; set; }
-        public Committee Committee { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
+        public virtual Committee Committee { get; set; }
         public int CommitteeId { get; set; }
-        public ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<UserTeam> UsersTeams { get; set; }
+        public virtual ICollection<MeetingUser> MeetingsUsers { get; set; }
+        public virtual ICollection<ConferenceUser> ConferencesUsers { get; set; }
 
         public User()
         {
             Roles = new HashSet<Role>();
             Activities = new HashSet<Activity>();
-
+            UsersTeams = new HashSet<UserTeam>();
+            MeetingsUsers = new HashSet<MeetingUser>();
+            ConferencesUsers = new HashSet<ConferenceUser>();
+            
         }
     }
 }

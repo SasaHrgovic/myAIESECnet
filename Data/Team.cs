@@ -22,13 +22,19 @@ namespace Data
         [Required]
         public int CommitteeId { get; set; }
         public virtual Committee Committee { get; set; }
+        [Required]
+        public int Type { get; set; }
         public virtual ICollection<Activity> Activities { get; set; }
         public virtual ICollection<TeamProject> TeamsProjects { get; set; }
+        public virtual ICollection<UserTeam> UsersTeams { get; set; }
+        public virtual ICollection<Position> Positions { get; set; }
 
         public Team()
         {
             Activities = new HashSet<Activity>();
             TeamsProjects = new HashSet<TeamProject>();
+            UsersTeams = new HashSet<UserTeam>();
+            Positions = new HashSet<Position>();
         }
     }
 }
