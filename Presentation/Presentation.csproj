@@ -54,6 +54,12 @@
     <Compile Include="frmMyAiesecNet.Designer.cs">
       <DependentUpon>frmMyAiesecNet.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistration.Designer.cs">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectViews\frmAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMyAiesecNet.resx">
       <DependentUpon>frmMyAiesecNet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistration.resx">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectViews\frmAddProject.resx">
       <DependentUpon>frmAddProject.cs</DependentUpon>
