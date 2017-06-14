@@ -35,11 +35,15 @@ namespace Presentation.TeamViews
                 txtDescription.Text = _teamToUpdate.Description;
                 dtpStart.Value = _teamToUpdate.Start;
                 dtpEnd.Value = _teamToUpdate.End;
+
+                if (_teamToUpdate.Type == 0) radProjectTeam.Checked = true;
+                else radFunctionalTeam.Checked = true;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int teamType = (radFunctionalTeam.Checked == true) ? 1 : 0;
             TeamLogic tl = new TeamLogic();
 
             Team newTeam = new Team();
@@ -47,6 +51,7 @@ namespace Presentation.TeamViews
             newTeam.Description = txtDescription.Text;
             newTeam.Start = dtpStart.Value;
             newTeam.End = dtpEnd.Value;
+            newTeam.Type = teamType;
 
             if (_teamToUpdate == null)
                 tl.Add(newTeam);

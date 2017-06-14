@@ -42,9 +42,13 @@
             this.btnUpdateTeam = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTeamMembers = new System.Windows.Forms.Label();
+            this.userTeamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTeamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTeams
@@ -153,10 +157,15 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Surname});
+            this.dataGridView1.DataSource = this.userTeamBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(743, 70);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridView1.MultiSelect = false;
@@ -176,6 +185,20 @@
             this.lblTeamMembers.TabIndex = 5;
             this.lblTeamMembers.Text = "Članovi";
             // 
+            // userTeamBindingSource
+            // 
+            this.userTeamBindingSource.DataSource = typeof(Data.UserTeam);
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Ime";
+            this.Name.Name = "Name";
+            // 
+            // Surname
+            // 
+            this.Surname.HeaderText = "Prezime";
+            this.Surname.Name = "Surname";
+            // 
             // ucTeams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTeamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +237,8 @@
         private System.Windows.Forms.Button btnUpdateTeam;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblTeamMembers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
+        private System.Windows.Forms.BindingSource userTeamBindingSource;
     }
 }

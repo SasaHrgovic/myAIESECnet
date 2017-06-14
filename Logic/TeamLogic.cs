@@ -24,7 +24,7 @@ namespace Logic
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
-                newTeam.CommitteeId = 1;
+                newTeam.CommitteeId = Session.committeeId;
                 db.Teams.Add(newTeam);
                 db.SaveChanges();
             }
@@ -39,6 +39,7 @@ namespace Logic
                 teamToUpdate.Description = newTeam.Description;
                 teamToUpdate.Start = newTeam.Start;
                 teamToUpdate.End = newTeam.End;
+                teamToUpdate.Type = newTeam.Type;
                 db.SaveChanges();
             }
         }

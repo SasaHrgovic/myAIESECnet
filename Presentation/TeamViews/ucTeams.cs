@@ -34,6 +34,7 @@ namespace Presentation.TeamViews
             teamBindingSource.DataSource = null;
             TeamLogic tl = new TeamLogic();
             teamBindingSource.DataSource = tl.Get();
+            //userTeamBindingSource.DataSource = t1.G
         }
 
         private void ucTeams_Load(object sender, EventArgs e)
