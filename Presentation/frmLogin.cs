@@ -28,6 +28,12 @@ namespace Presentation
                 a.Show();
                 this.Visible = false;
             }
+            else
+            {
+                MessageBox.Show("Email ili lozinka nisu ispravni!", "Netočni podaci", MessageBoxButtons.OK);
+                txtEmail.Clear();
+                txtPassword.Clear();
+            }
             
         }
 

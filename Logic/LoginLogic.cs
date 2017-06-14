@@ -57,17 +57,32 @@ namespace Logic
             }
         }
 
-        private void SetToSession()
+        private void SetToSession(User u)
         {
-            Session.userId = 1;
-            Session.committeeId = 1;
+            Session.userId = u.Id;
+            Session.committeeId = u.CommitteeId;
             Session.roleId = 2;
         }
 
         public bool Login(string email, string password)
         {
-            SetToSession();
-            return true;
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                User u = db.Users.FirstOrDefault(x => x.Email == email);
+                if (u != null)
+                {
+                    if (u.Password == password)
+                    {
+                        SetToSession(u);
+                        return true;
+                    }
+                    else return false;
+                }
+               
+                else return false;
+                
+            }
+              
         }
     }
 }
