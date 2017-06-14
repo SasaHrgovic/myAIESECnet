@@ -30,5 +30,13 @@ namespace Presentation
             }
             
         }
+
+        private void lblRegistracija_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegistration formar = new frmRegistration();
+            this.Visible = false;
+            formar.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
