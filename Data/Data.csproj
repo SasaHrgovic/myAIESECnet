@@ -84,6 +84,14 @@
     <Compile Include="Migrations\201706122049017_AddRestOfTheModel.Designer.cs">
       <DependentUpon>201706122049017_AddRestOfTheModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706172136571_FixRoleModel.cs" />
+    <Compile Include="Migrations\201706172136571_FixRoleModel.Designer.cs">
+      <DependentUpon>201706172136571_FixRoleModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706172259473_Check.cs" />
+    <Compile Include="Migrations\201706172259473_Check.Designer.cs">
+      <DependentUpon>201706172259473_Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyAiesecNetDbContext.cs" />
     <Compile Include="Position.cs" />
@@ -93,6 +101,7 @@
     <Compile Include="Team.cs" />
     <Compile Include="TeamProject.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserRole.cs" />
     <Compile Include="UserTeam.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706122049017_AddRestOfTheModel.resx">
       <DependentUpon>201706122049017_AddRestOfTheModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706172136571_FixRoleModel.resx">
+      <DependentUpon>201706172136571_FixRoleModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706172259473_Check.resx">
+      <DependentUpon>201706172259473_Check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

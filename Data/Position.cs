@@ -16,7 +16,7 @@ namespace Data
         public string Description { get; set; }
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
-        public byte RoleId { get; set; }
+        public int RoleId { get; set; }
         public virtual Role Role { get; set; }
         public virtual ICollection<UserTeam> UsersTeams { get; set; }
         

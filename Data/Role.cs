@@ -9,15 +9,15 @@ namespace Data
 {
     public class Role
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
         [Required, StringLength(30)]
         public string Name { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserRole> UsersRoles { get; set; }
         public virtual ICollection<Position> Positions { get; set; }
 
         public Role()
         {
-            Users = new HashSet<User>();
+            UsersRoles = new HashSet<UserRole>();
             Positions = new HashSet<Position>();
         }
     }

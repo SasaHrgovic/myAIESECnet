@@ -23,7 +23,7 @@ namespace Data
         public string PhoneNumber { get; set; }
         [Required]
         public DateTime BirthDate { get; set; }
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<UserRole> UsersRoles { get; set; }
         public virtual Committee Committee { get; set; }
         public int CommitteeId { get; set; }
         public virtual ICollection<Activity> Activities { get; set; }
@@ -33,7 +33,7 @@ namespace Data
 
         public User()
         {
-            Roles = new HashSet<Role>();
+            UsersRoles = new HashSet<UserRole>();
             Activities = new HashSet<Activity>();
             UsersTeams = new HashSet<UserTeam>();
             MeetingsUsers = new HashSet<MeetingUser>();
