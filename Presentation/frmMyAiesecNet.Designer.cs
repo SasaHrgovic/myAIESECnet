@@ -36,7 +36,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblActivities = new System.Windows.Forms.Label();
             this.lblCommitties = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,22 +117,12 @@
             this.lblCommitties.TabIndex = 6;
             this.lblCommitties.Text = "Odbori";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(675, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
             // frmMyAiesecNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1015, 555);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCommitties);
             this.Controls.Add(this.lblActivities);
             this.Controls.Add(this.pictureBox1);
@@ -160,6 +149,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblActivities;
         private System.Windows.Forms.Label lblCommitties;
-        private System.Windows.Forms.Label label1;
     }
 }

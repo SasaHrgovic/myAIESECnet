@@ -41,20 +41,14 @@
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.btnUpdateTeam = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userTeamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTeamMembers = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positionIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTeamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTeams
@@ -84,6 +78,7 @@
             this.dgvTeams.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTeams.Size = new System.Drawing.Size(668, 186);
             this.dgvTeams.TabIndex = 0;
+            this.dgvTeams.SelectionChanged += new System.EventHandler(this.dgvTeams_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -169,15 +164,9 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FirstName,
-            this.LastName,
-            this.userIdDataGridViewTextBoxColumn,
-            this.userDataGridViewTextBoxColumn,
-            this.teamIdDataGridViewTextBoxColumn,
-            this.teamDataGridViewTextBoxColumn,
-            this.positionIdDataGridViewTextBoxColumn,
-            this.positionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.userTeamBindingSource;
+            this.nameDataGridViewTextBoxColumn1,
+            this.surnameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.userBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(743, 70);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridView1.MultiSelect = false;
@@ -185,10 +174,6 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(346, 186);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // userTeamBindingSource
-            // 
-            this.userTeamBindingSource.DataSource = typeof(Data.UserTeam);
             // 
             // lblTeamMembers
             // 
@@ -201,51 +186,21 @@
             this.lblTeamMembers.TabIndex = 5;
             this.lblTeamMembers.Text = "Članovi";
             // 
-            // FirstName
+            // userBindingSource
             // 
-            this.FirstName.HeaderText = "Ime";
-            this.FirstName.Name = "FirstName";
+            this.userBindingSource.DataSource = typeof(Data.User);
             // 
-            // LastName
+            // nameDataGridViewTextBoxColumn1
             // 
-            this.LastName.HeaderText = "Prezime";
-            this.LastName.Name = "LastName";
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             // 
-            // userIdDataGridViewTextBoxColumn
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            // 
-            // userDataGridViewTextBoxColumn
-            // 
-            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            this.userDataGridViewTextBoxColumn.HeaderText = "User";
-            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            // 
-            // teamIdDataGridViewTextBoxColumn
-            // 
-            this.teamIdDataGridViewTextBoxColumn.DataPropertyName = "TeamId";
-            this.teamIdDataGridViewTextBoxColumn.HeaderText = "TeamId";
-            this.teamIdDataGridViewTextBoxColumn.Name = "teamIdDataGridViewTextBoxColumn";
-            // 
-            // teamDataGridViewTextBoxColumn
-            // 
-            this.teamDataGridViewTextBoxColumn.DataPropertyName = "Team";
-            this.teamDataGridViewTextBoxColumn.HeaderText = "Team";
-            this.teamDataGridViewTextBoxColumn.Name = "teamDataGridViewTextBoxColumn";
-            // 
-            // positionIdDataGridViewTextBoxColumn
-            // 
-            this.positionIdDataGridViewTextBoxColumn.DataPropertyName = "PositionId";
-            this.positionIdDataGridViewTextBoxColumn.HeaderText = "PositionId";
-            this.positionIdDataGridViewTextBoxColumn.Name = "positionIdDataGridViewTextBoxColumn";
-            // 
-            // positionDataGridViewTextBoxColumn
-            // 
-            this.positionDataGridViewTextBoxColumn.DataPropertyName = "Position";
-            this.positionDataGridViewTextBoxColumn.HeaderText = "Position";
-            this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             // 
             // ucTeams
             // 
@@ -264,7 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTeamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,14 +240,8 @@
         private System.Windows.Forms.Button btnUpdateTeam;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblTeamMembers;
-        private System.Windows.Forms.BindingSource userTeamBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn positionIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource userBindingSource;
     }
 }

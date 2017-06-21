@@ -20,6 +20,17 @@ namespace Logic
             }
         }
 
+        public List<User> GetTeamMembers(Team t)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                db.Teams.Attach(t);
+                List<User> users = t.UsersTeams.Select(y => y.User).ToList();
+                return users;
+
+            }
+        }
+
         public void Add(Team newTeam)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())

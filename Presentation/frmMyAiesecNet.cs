@@ -63,7 +63,6 @@ namespace Presentation
 
         private void frmMyAiesecNet_Load(object sender, EventArgs e)
         {
-            label1.Text = Session.userId.ToString();
             if (Session.roleId == 2)
             {
                 lblCommitties.Visible = false;

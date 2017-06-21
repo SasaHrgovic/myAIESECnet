@@ -140,6 +140,7 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Data.Project.datasource" />
     <None Include="Properties\DataSources\Data.Team.datasource" />
+    <None Include="Properties\DataSources\Data.User.datasource" />
     <None Include="Properties\DataSources\Data.UserTeam.datasource" />
     <None Include="Properties\DataSources\Logic.TeamLogic.datasource" />
   </ItemGroup>

@@ -34,7 +34,6 @@ namespace Presentation.TeamViews
             teamBindingSource.DataSource = null;
             TeamLogic tl = new TeamLogic();
             teamBindingSource.DataSource = tl.Get();
-            //userTeamBindingSource.DataSource = t1.G
         }
 
         private void ucTeams_Load(object sender, EventArgs e)
@@ -54,6 +53,14 @@ namespace Presentation.TeamViews
             frmAddTeam f = new frmAddTeam(teamBindingSource.Current as Team);
             f.ShowDialog();
             ShowTeams();
+        }
+
+        private void dgvTeams_SelectionChanged(object sender, EventArgs e)
+        {
+            userBindingSource.DataSource = null;
+            Team t = dgvTeams.CurrentRow.DataBoundItem as Team;
+            TeamLogic tl = new TeamLogic();
+            userBindingSource.DataSource = tl.GetTeamMembers(t);
         }
     }
 }
