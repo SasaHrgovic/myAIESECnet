@@ -24,6 +24,7 @@ namespace Presentation.TeamViews
                 return _instance;
             }
         }
+        private int _selectedTeamIndex;
         public ucTeams()
         {
             InitializeComponent();
@@ -58,9 +59,12 @@ namespace Presentation.TeamViews
         private void dgvTeams_SelectionChanged(object sender, EventArgs e)
         {
             userBindingSource.DataSource = null;
-            Team t = dgvTeams.CurrentRow.DataBoundItem as Team;
-            TeamLogic tl = new TeamLogic();
-            userBindingSource.DataSource = tl.GetTeamMembers(t);
+            if (dgvTeams.CurrentRow != null)
+            {
+                Team t = dgvTeams.CurrentRow.DataBoundItem as Team;
+                TeamLogic tl = new TeamLogic();
+                userBindingSource.DataSource = tl.GetTeamMembers(t);
+            }
         }
     }
 }
