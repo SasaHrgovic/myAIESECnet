@@ -63,7 +63,7 @@ namespace Logic
         {
             Session.userId = u.Id;
             Session.committeeId = u.CommitteeId;
-            Session.roleId = 2;
+            Session.roleId = (u.UsersRoles.FirstOrDefault()).RoleId;
         }
 
         public bool Login(string email, string password)
