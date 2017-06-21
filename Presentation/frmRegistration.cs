@@ -51,11 +51,9 @@ namespace Presentation
             {
                 MessageBox.Show("Neispravna lozinka!", "Upozorenje", MessageBoxButtons.OK);
                 txtPassword.Clear();
-                txtPassword2.Clear();
-                
+                txtPassword2.Clear();    
             }
-            
-            
+                       
         }
 
         private void frmRegistration_Load(object sender, EventArgs e)
