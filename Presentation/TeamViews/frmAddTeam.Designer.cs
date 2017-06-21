@@ -39,8 +39,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDeleteTeam = new System.Windows.Forms.Button();
             this.gbxTeamType = new System.Windows.Forms.GroupBox();
-            this.radProjectTeam = new System.Windows.Forms.RadioButton();
             this.radFunctionalTeam = new System.Windows.Forms.RadioButton();
+            this.radProjectTeam = new System.Windows.Forms.RadioButton();
+            this.lbxCommitteeMembers = new System.Windows.Forms.ListBox();
+            this.lbxTeamMembers = new System.Windows.Forms.ListBox();
             this.gbxTeamType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +144,16 @@
             this.gbxTeamType.TabStop = false;
             this.gbxTeamType.Text = "Vrsta tima";
             // 
+            // radFunctionalTeam
+            // 
+            this.radFunctionalTeam.AutoSize = true;
+            this.radFunctionalTeam.Location = new System.Drawing.Point(106, 35);
+            this.radFunctionalTeam.Name = "radFunctionalTeam";
+            this.radFunctionalTeam.Size = new System.Drawing.Size(72, 17);
+            this.radFunctionalTeam.TabIndex = 1;
+            this.radFunctionalTeam.Text = "Funkcijski";
+            this.radFunctionalTeam.UseVisualStyleBackColor = true;
+            // 
             // radProjectTeam
             // 
             this.radProjectTeam.AutoSize = true;
@@ -154,21 +166,29 @@
             this.radProjectTeam.Text = "Projektni";
             this.radProjectTeam.UseVisualStyleBackColor = true;
             // 
-            // radFunctionalTeam
+            // lbxCommitteeMembers
             // 
-            this.radFunctionalTeam.AutoSize = true;
-            this.radFunctionalTeam.Location = new System.Drawing.Point(106, 35);
-            this.radFunctionalTeam.Name = "radFunctionalTeam";
-            this.radFunctionalTeam.Size = new System.Drawing.Size(72, 17);
-            this.radFunctionalTeam.TabIndex = 1;
-            this.radFunctionalTeam.Text = "Funkcijski";
-            this.radFunctionalTeam.UseVisualStyleBackColor = true;
+            this.lbxCommitteeMembers.FormattingEnabled = true;
+            this.lbxCommitteeMembers.Location = new System.Drawing.Point(298, 136);
+            this.lbxCommitteeMembers.Name = "lbxCommitteeMembers";
+            this.lbxCommitteeMembers.Size = new System.Drawing.Size(193, 212);
+            this.lbxCommitteeMembers.TabIndex = 11;
+            // 
+            // lbxTeamMembers
+            // 
+            this.lbxTeamMembers.FormattingEnabled = true;
+            this.lbxTeamMembers.Location = new System.Drawing.Point(510, 136);
+            this.lbxTeamMembers.Name = "lbxTeamMembers";
+            this.lbxTeamMembers.Size = new System.Drawing.Size(193, 212);
+            this.lbxTeamMembers.TabIndex = 12;
             // 
             // frmAddTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 530);
+            this.ClientSize = new System.Drawing.Size(748, 530);
+            this.Controls.Add(this.lbxTeamMembers);
+            this.Controls.Add(this.lbxCommitteeMembers);
             this.Controls.Add(this.gbxTeamType);
             this.Controls.Add(this.btnDeleteTeam);
             this.Controls.Add(this.btnAdd);
@@ -205,5 +225,7 @@
         private System.Windows.Forms.GroupBox gbxTeamType;
         private System.Windows.Forms.RadioButton radFunctionalTeam;
         private System.Windows.Forms.RadioButton radProjectTeam;
+        private System.Windows.Forms.ListBox lbxCommitteeMembers;
+        private System.Windows.Forms.ListBox lbxTeamMembers;
     }
 }

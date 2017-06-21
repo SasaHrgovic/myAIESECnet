@@ -30,6 +30,7 @@ namespace Data
         public virtual ICollection<UserTeam> UsersTeams { get; set; }
         public virtual ICollection<MeetingUser> MeetingsUsers { get; set; }
         public virtual ICollection<ConferenceUser> ConferencesUsers { get; set; }
+        public string FullName { get { return Name + " " + Surname; } }
 
         public User()
         {

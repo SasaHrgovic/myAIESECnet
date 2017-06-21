@@ -47,6 +47,7 @@
     <Compile Include="RegistrationLogic.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="TeamLogic.cs" />
+    <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

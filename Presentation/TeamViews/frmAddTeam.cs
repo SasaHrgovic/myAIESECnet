@@ -39,6 +39,10 @@ namespace Presentation.TeamViews
                 if (_teamToUpdate.Type == 0) radProjectTeam.Checked = true;
                 else radFunctionalTeam.Checked = true;
             }
+
+            lbxCommitteeMembers.DataSource = UserLogic.GetCommitteMembers();
+            lbxCommitteeMembers.DisplayMember = "FullName";
+            lbxCommitteeMembers.ValueMember = "Id";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
