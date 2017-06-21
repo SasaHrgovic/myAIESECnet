@@ -33,17 +33,28 @@ namespace Presentation
             u.Name = txtName.Text;
             u.Surname = txtSurname.Text;
             u.Email = txtEmail.Text;
-            u.Password = txtPassword.Text;
-            u.PhoneNumber = txtPhoneNumber.Text;
-            u.BirthDate = DateTime.Parse(cbxYear.Text + "/" + cbxMonth.Text + "/" + cbxDay.Text);
-            u.CommitteeId = int.Parse(cbxCommittee.SelectedValue.ToString());
-            LoginLogic l = new LoginLogic();
-            
-            if (l.Register(u))
+            if (txtPassword.Text == txtPassword2.Text)
             {
-                MessageBox.Show("Registracija je uspješna!", "Registracija", MessageBoxButtons.OK);
-                this.Close();
+                u.Password = txtPassword.Text;
+                u.PhoneNumber = txtPhoneNumber.Text;
+                u.BirthDate = DateTime.Parse(cbxYear.Text + "/" + cbxMonth.Text + "/" + cbxDay.Text);
+                u.CommitteeId = int.Parse(cbxCommittee.SelectedValue.ToString());
+                RegistrationLogic r = new RegistrationLogic();
+
+                if (r.Register(u))
+                {
+                    MessageBox.Show("Registracija je uspješna!", "Registracija", MessageBoxButtons.OK);
+                    this.Close();
+                }
             }
+            else
+            {
+                MessageBox.Show("Neispravna lozinka!", "Upozorenje", MessageBoxButtons.OK);
+                txtPassword.Clear();
+                txtPassword2.Clear();
+                
+            }
+            
             
         }
 

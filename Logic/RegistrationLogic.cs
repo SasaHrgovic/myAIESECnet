@@ -7,7 +7,7 @@ using Data;
 
 namespace Logic
 {
-    class RegistrationLogic
+    public class RegistrationLogic
     {
         public bool Register(User u)
         {
