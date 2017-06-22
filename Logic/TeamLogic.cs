@@ -18,7 +18,7 @@ namespace Logic
         {
             using(MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
-                List<Team> teams = db.Teams.ToList();
+                List<Team> teams = db.Teams.Include("TeamsProjects").ToList();
                 return teams;
                 
             }
@@ -80,6 +80,7 @@ namespace Logic
                 teamToUpdate.Start = newTeam.Start;
                 teamToUpdate.End = newTeam.End;
                 teamToUpdate.Type = newTeam.Type;
+                teamToUpdate.TeamsProjects = newTeam.TeamsProjects;
 
                 if (teamMembers != null)
                 {

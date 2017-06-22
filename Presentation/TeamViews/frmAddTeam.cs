@@ -18,6 +18,7 @@ namespace Presentation.TeamViews
         private User _draggedUser;
         private List<User> _committeeMembers = new List<User>();
         private List<User> _teamMembers = new List<User>();
+        private int _draggedOver;
 
         public frmAddTeam()
         {
@@ -50,6 +51,11 @@ namespace Presentation.TeamViews
         {
             List<User> _committeeMembersCopy = UserLogic.GetCommitteMembers();
 
+            ProjectLogic pl = new ProjectLogic();
+            cbxProjects.DataSource = pl.Get();
+            cbxProjects.DisplayMember = "Name";
+            cbxProjects.ValueMember = "Id";
+
             if (_teamToUpdate != null)
             {
                 TeamLogic tl = new TeamLogic();
@@ -60,19 +66,18 @@ namespace Presentation.TeamViews
                 txtName.Text = _teamToUpdate.Name;
                 txtDescription.Text = _teamToUpdate.Description;
                 dtpStart.Value = _teamToUpdate.Start;
-                dtpEnd.Value = _teamToUpdate.End;
+                dtpEnd.Value = _teamToUpdate.End;             
 
-                if (_teamToUpdate.Type == 0) radProjectTeam.Checked = true;
+                if (_teamToUpdate.Type == 0)
+                {
+                    radProjectTeam.Checked = true;
+                    cbxProjects.SelectedValue = (_teamToUpdate.TeamsProjects.First()).ProjectId;
+                }
                 else radFunctionalTeam.Checked = true;
             }
             else _committeeMembers = _committeeMembersCopy;
 
             ShowCommitteeMembers();
-
-            ProjectLogic pl = new ProjectLogic();
-            cbxProjects.DataSource = pl.Get();
-            cbxProjects.DisplayMember = "Name";
-            cbxProjects.ValueMember = "Id";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -86,6 +91,8 @@ namespace Presentation.TeamViews
             newTeam.Start = dtpStart.Value;
             newTeam.End = dtpEnd.Value;
             newTeam.Type = teamType;
+
+            if (teamType == 0) newTeam.TeamsProjects.Add(new TeamProject() { TeamId = newTeam.Id, ProjectId = int.Parse(cbxProjects.SelectedValue.ToString())});
 
             if (_teamToUpdate == null)
                 tl.Add(newTeam, _teamMembers);
@@ -110,8 +117,13 @@ namespace Presentation.TeamViews
             if (lbxCommitteeMembers.Items.Count == 0) return;
 
             int index = lbxCommitteeMembers.IndexFromPoint(e.X, e.Y);
-            _draggedUser = lbxCommitteeMembers.Items[index] as User;
-            DragDropEffects dde = DoDragDrop(_draggedUser, DragDropEffects.All);
+
+            if (index != -1)
+            {
+                _draggedOver = 0;
+                _draggedUser = lbxCommitteeMembers.Items[index] as User;
+                DragDropEffects dde = DoDragDrop(_draggedUser, DragDropEffects.All);
+            }
         }
 
         private void lbxTeamMembers_DragOver(object sender, DragEventArgs e)
@@ -121,7 +133,7 @@ namespace Presentation.TeamViews
 
         private void lbxTeamMembers_DragDrop(object sender, DragEventArgs e)
         {
-            if (_draggedUser != null)
+            if (_draggedUser != null && _draggedOver == 0)
             {
                 User userToRemove = _committeeMembers.Single(x => x == _draggedUser);
                 _committeeMembers.Remove(userToRemove);
@@ -137,10 +149,13 @@ namespace Presentation.TeamViews
             if (lbxTeamMembers.Items.Count == 0) return;
 
             int index = lbxTeamMembers.IndexFromPoint(e.X, e.Y);
-            User u = lbxTeamMembers.Items[index] as User;
-            _draggedUser = u;
 
-            DragDropEffects dde = DoDragDrop(u, DragDropEffects.All);
+            if (index != -1)
+            {
+                _draggedOver = 1;
+                _draggedUser = lbxTeamMembers.Items[index] as User;
+                DragDropEffects dde = DoDragDrop(_draggedUser, DragDropEffects.All);
+            }
         }
 
         private void lbxCommitteeMembers_DragOver(object sender, DragEventArgs e)
@@ -150,7 +165,7 @@ namespace Presentation.TeamViews
 
         private void lbxCommitteeMembers_DragDrop(object sender, DragEventArgs e)
         {
-            if (_draggedUser!= null)
+            if (_draggedUser!= null && _draggedOver == 1)
             {
                 User userToRemove = _teamMembers.Single(x => x == _draggedUser);
                 if (userToRemove != null) _teamMembers.Remove(userToRemove);
@@ -161,6 +176,12 @@ namespace Presentation.TeamViews
                 ShowTeamMembers();
                 ShowCommitteeMembers();
             }
+        }
+
+        private void radProjectTeam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radProjectTeam.Checked == true) cbxProjects.Visible = true;
+            else cbxProjects.Visible = false;
         }
     }
 }

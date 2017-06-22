@@ -44,6 +44,9 @@
             this.lbxCommitteeMembers = new System.Windows.Forms.ListBox();
             this.lbxTeamMembers = new System.Windows.Forms.ListBox();
             this.cbxProjects = new System.Windows.Forms.ComboBox();
+            this.lblCommitteeMembers = new System.Windows.Forms.Label();
+            this.lblTeamMembers = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.gbxTeamType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +119,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(193, 314);
+            this.btnAdd.Location = new System.Drawing.Point(644, 431);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 8;
@@ -126,7 +129,7 @@
             // 
             // btnDeleteTeam
             // 
-            this.btnDeleteTeam.Location = new System.Drawing.Point(25, 313);
+            this.btnDeleteTeam.Location = new System.Drawing.Point(12, 431);
             this.btnDeleteTeam.Name = "btnDeleteTeam";
             this.btnDeleteTeam.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteTeam.TabIndex = 9;
@@ -166,12 +169,13 @@
             this.radProjectTeam.TabStop = true;
             this.radProjectTeam.Text = "Projektni";
             this.radProjectTeam.UseVisualStyleBackColor = true;
+            this.radProjectTeam.CheckedChanged += new System.EventHandler(this.radProjectTeam_CheckedChanged);
             // 
             // lbxCommitteeMembers
             // 
             this.lbxCommitteeMembers.AllowDrop = true;
             this.lbxCommitteeMembers.FormattingEnabled = true;
-            this.lbxCommitteeMembers.Location = new System.Drawing.Point(298, 136);
+            this.lbxCommitteeMembers.Location = new System.Drawing.Point(298, 161);
             this.lbxCommitteeMembers.Name = "lbxCommitteeMembers";
             this.lbxCommitteeMembers.Size = new System.Drawing.Size(193, 212);
             this.lbxCommitteeMembers.TabIndex = 11;
@@ -183,7 +187,7 @@
             // 
             this.lbxTeamMembers.AllowDrop = true;
             this.lbxTeamMembers.FormattingEnabled = true;
-            this.lbxTeamMembers.Location = new System.Drawing.Point(510, 136);
+            this.lbxTeamMembers.Location = new System.Drawing.Point(510, 161);
             this.lbxTeamMembers.Name = "lbxTeamMembers";
             this.lbxTeamMembers.Size = new System.Drawing.Size(193, 212);
             this.lbxTeamMembers.TabIndex = 12;
@@ -194,16 +198,49 @@
             // cbxProjects
             // 
             this.cbxProjects.FormattingEnabled = true;
-            this.cbxProjects.Location = new System.Drawing.Point(510, 83);
+            this.cbxProjects.Location = new System.Drawing.Point(510, 73);
             this.cbxProjects.Name = "cbxProjects";
             this.cbxProjects.Size = new System.Drawing.Size(193, 21);
             this.cbxProjects.TabIndex = 13;
+            this.cbxProjects.Text = "Odaberi projekt";
+            // 
+            // lblCommitteeMembers
+            // 
+            this.lblCommitteeMembers.AutoSize = true;
+            this.lblCommitteeMembers.Location = new System.Drawing.Point(295, 142);
+            this.lblCommitteeMembers.Name = "lblCommitteeMembers";
+            this.lblCommitteeMembers.Size = new System.Drawing.Size(121, 13);
+            this.lblCommitteeMembers.TabIndex = 14;
+            this.lblCommitteeMembers.Text = "Članovi lokalnog odbora";
+            // 
+            // lblTeamMembers
+            // 
+            this.lblTeamMembers.AutoSize = true;
+            this.lblTeamMembers.Location = new System.Drawing.Point(507, 142);
+            this.lblTeamMembers.Name = "lblTeamMembers";
+            this.lblTeamMembers.Size = new System.Drawing.Size(64, 13);
+            this.lblTeamMembers.TabIndex = 15;
+            this.lblTeamMembers.Text = "Članovi tima";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(563, 431);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Odustani";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // frmAddTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 530);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(731, 466);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblTeamMembers);
+            this.Controls.Add(this.lblCommitteeMembers);
             this.Controls.Add(this.cbxProjects);
             this.Controls.Add(this.lbxTeamMembers);
             this.Controls.Add(this.lbxCommitteeMembers);
@@ -246,5 +283,8 @@
         private System.Windows.Forms.ListBox lbxCommitteeMembers;
         private System.Windows.Forms.ListBox lbxTeamMembers;
         private System.Windows.Forms.ComboBox cbxProjects;
+        private System.Windows.Forms.Label lblCommitteeMembers;
+        private System.Windows.Forms.Label lblTeamMembers;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
