@@ -31,20 +31,31 @@ namespace Logic
             }
         }
 
-        public void Add(Team newTeam)
+        private Team AddTeamMembers(Team newTeam, List<User> teamMembers)
+        {
+            foreach (User teamMember in teamMembers)
+            {
+                newTeam.UsersTeams.Add(new UserTeam() { TeamId = newTeam.Id, UserId = teamMember.Id });
+            }
+            return newTeam;
+        }
+
+        public void Add(Team newTeam, List<User> teamMembers)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
+                if (teamMembers != null) newTeam = AddTeamMembers(newTeam, teamMembers);
                 newTeam.CommitteeId = Session.committeeId;
                 db.Teams.Add(newTeam);
                 db.SaveChanges();
             }
         }
 
-        public void Update(Team teamToUpdate, Team newTeam)
+        public void Update(Team teamToUpdate, Team newTeam, List<User> teamMembers)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
+                if (teamMembers != null) teamToUpdate = AddTeamMembers(newTeam, teamMembers);
                 db.Teams.Attach(teamToUpdate);
                 teamToUpdate.Name = newTeam.Name;
                 teamToUpdate.Description = newTeam.Description;

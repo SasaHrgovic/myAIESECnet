@@ -168,19 +168,27 @@
             // 
             // lbxCommitteeMembers
             // 
+            this.lbxCommitteeMembers.AllowDrop = true;
             this.lbxCommitteeMembers.FormattingEnabled = true;
             this.lbxCommitteeMembers.Location = new System.Drawing.Point(298, 136);
             this.lbxCommitteeMembers.Name = "lbxCommitteeMembers";
             this.lbxCommitteeMembers.Size = new System.Drawing.Size(193, 212);
             this.lbxCommitteeMembers.TabIndex = 11;
+            this.lbxCommitteeMembers.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbxCommitteeMembers_DragDrop);
+            this.lbxCommitteeMembers.DragOver += new System.Windows.Forms.DragEventHandler(this.lbxCommitteeMembers_DragOver);
+            this.lbxCommitteeMembers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbxCommitteeMembers_MouseDown);
             // 
             // lbxTeamMembers
             // 
+            this.lbxTeamMembers.AllowDrop = true;
             this.lbxTeamMembers.FormattingEnabled = true;
             this.lbxTeamMembers.Location = new System.Drawing.Point(510, 136);
             this.lbxTeamMembers.Name = "lbxTeamMembers";
             this.lbxTeamMembers.Size = new System.Drawing.Size(193, 212);
             this.lbxTeamMembers.TabIndex = 12;
+            this.lbxTeamMembers.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbxTeamMembers_DragDrop);
+            this.lbxTeamMembers.DragOver += new System.Windows.Forms.DragEventHandler(this.lbxTeamMembers_DragOver);
+            this.lbxTeamMembers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbxTeamMembers_MouseDown);
             // 
             // frmAddTeam
             // 

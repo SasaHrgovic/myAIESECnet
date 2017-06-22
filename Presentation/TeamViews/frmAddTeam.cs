@@ -15,6 +15,9 @@ namespace Presentation.TeamViews
     public partial class frmAddTeam : Form
     {
         private Team _teamToUpdate;
+        private User _draggedUser;
+        private List<User> _committeeMembers = new List<User>();
+        private List<User> _teamMembers = new List<User>();
 
         public frmAddTeam()
         {
@@ -27,10 +30,33 @@ namespace Presentation.TeamViews
             _teamToUpdate = team;
         }
 
+        private void ShowCommitteeMembers()
+        {
+            lbxCommitteeMembers.DataSource = null;
+            lbxCommitteeMembers.DataSource = _committeeMembers;
+            lbxCommitteeMembers.DisplayMember = "FullName";
+            lbxCommitteeMembers.ValueMember = "Id";
+        }
+
+        private void ShowTeamMembers()
+        {
+            lbxTeamMembers.DataSource = null;
+            lbxTeamMembers.DataSource = _teamMembers;
+            lbxTeamMembers.DisplayMember = "FullName";
+            lbxTeamMembers.ValueMember = "Id";
+        }
+
         private void frmAddTeam_Load(object sender, EventArgs e)
         {
+            List<User> _committeeMembersCopy = UserLogic.GetCommitteMembers();
+
             if (_teamToUpdate != null)
             {
+                TeamLogic tl = new TeamLogic();
+                _teamMembers = tl.GetTeamMembers(_teamToUpdate);
+                _committeeMembers = _committeeMembersCopy.Except(_teamMembers, new UserListEqualityComparer()).ToList();
+                ShowTeamMembers();
+
                 txtName.Text = _teamToUpdate.Name;
                 txtDescription.Text = _teamToUpdate.Description;
                 dtpStart.Value = _teamToUpdate.Start;
@@ -39,10 +65,9 @@ namespace Presentation.TeamViews
                 if (_teamToUpdate.Type == 0) radProjectTeam.Checked = true;
                 else radFunctionalTeam.Checked = true;
             }
+            else _committeeMembers = _committeeMembersCopy;
 
-            lbxCommitteeMembers.DataSource = UserLogic.GetCommitteMembers();
-            lbxCommitteeMembers.DisplayMember = "FullName";
-            lbxCommitteeMembers.ValueMember = "Id";
+            ShowCommitteeMembers();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -58,9 +83,9 @@ namespace Presentation.TeamViews
             newTeam.Type = teamType;
 
             if (_teamToUpdate == null)
-                tl.Add(newTeam);
+                tl.Add(newTeam, _teamMembers);
             else
-                tl.Update(_teamToUpdate, newTeam);
+                tl.Update(_teamToUpdate, newTeam, _teamMembers);
 
             Close();
         }
@@ -72,6 +97,64 @@ namespace Presentation.TeamViews
                 TeamLogic tl = new TeamLogic();
                 tl.Delete(_teamToUpdate);
                 Close();
+            }
+        }
+
+        private void lbxCommitteeMembers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (lbxCommitteeMembers.Items.Count == 0) return;
+
+            int index = lbxCommitteeMembers.IndexFromPoint(e.X, e.Y);
+            _draggedUser = lbxCommitteeMembers.Items[index] as User;
+            DragDropEffects dde = DoDragDrop(_draggedUser, DragDropEffects.All);
+        }
+
+        private void lbxTeamMembers_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void lbxTeamMembers_DragDrop(object sender, DragEventArgs e)
+        {
+            if (_draggedUser != null)
+            {
+                User userToRemove = _committeeMembers.Single(x => x == _draggedUser);
+                _committeeMembers.Remove(userToRemove);
+                ShowCommitteeMembers();
+
+                _teamMembers.Add(_draggedUser);
+                ShowTeamMembers();
+            }
+        }
+
+        private void lbxTeamMembers_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (lbxTeamMembers.Items.Count == 0) return;
+
+            int index = lbxTeamMembers.IndexFromPoint(e.X, e.Y);
+            User u = lbxTeamMembers.Items[index] as User;
+            _draggedUser = u;
+
+            DragDropEffects dde = DoDragDrop(u, DragDropEffects.All);
+        }
+
+        private void lbxCommitteeMembers_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void lbxCommitteeMembers_DragDrop(object sender, DragEventArgs e)
+        {
+            if (_draggedUser!= null)
+            {
+                User userToRemove = _teamMembers.Single(x => x == _draggedUser);
+                if (userToRemove != null) _teamMembers.Remove(userToRemove);
+                else _teamMembers.Remove(_draggedUser);
+
+                _committeeMembers.Add(_draggedUser);
+
+                ShowTeamMembers();
+                ShowCommitteeMembers();
             }
         }
     }
