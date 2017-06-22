@@ -68,6 +68,11 @@ namespace Presentation.TeamViews
             else _committeeMembers = _committeeMembersCopy;
 
             ShowCommitteeMembers();
+
+            ProjectLogic pl = new ProjectLogic();
+            cbxProjects.DataSource = pl.Get();
+            cbxProjects.DisplayMember = "Name";
+            cbxProjects.ValueMember = "Id";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

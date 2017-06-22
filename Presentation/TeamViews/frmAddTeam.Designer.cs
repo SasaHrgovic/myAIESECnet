@@ -43,6 +43,7 @@
             this.radProjectTeam = new System.Windows.Forms.RadioButton();
             this.lbxCommitteeMembers = new System.Windows.Forms.ListBox();
             this.lbxTeamMembers = new System.Windows.Forms.ListBox();
+            this.cbxProjects = new System.Windows.Forms.ComboBox();
             this.gbxTeamType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,11 +191,20 @@
             this.lbxTeamMembers.DragOver += new System.Windows.Forms.DragEventHandler(this.lbxTeamMembers_DragOver);
             this.lbxTeamMembers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbxTeamMembers_MouseDown);
             // 
+            // cbxProjects
+            // 
+            this.cbxProjects.FormattingEnabled = true;
+            this.cbxProjects.Location = new System.Drawing.Point(510, 83);
+            this.cbxProjects.Name = "cbxProjects";
+            this.cbxProjects.Size = new System.Drawing.Size(193, 21);
+            this.cbxProjects.TabIndex = 13;
+            // 
             // frmAddTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 530);
+            this.Controls.Add(this.cbxProjects);
             this.Controls.Add(this.lbxTeamMembers);
             this.Controls.Add(this.lbxCommitteeMembers);
             this.Controls.Add(this.gbxTeamType);
@@ -235,5 +245,6 @@
         private System.Windows.Forms.RadioButton radProjectTeam;
         private System.Windows.Forms.ListBox lbxCommitteeMembers;
         private System.Windows.Forms.ListBox lbxTeamMembers;
+        private System.Windows.Forms.ComboBox cbxProjects;
     }
 }
