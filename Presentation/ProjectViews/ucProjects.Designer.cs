@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProjects = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,28 +41,28 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnUpdateProject = new System.Windows.Forms.Button();
             this.btnAddProject = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvProjects
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProjects.AutoGenerateColumns = false;
+            this.dgvProjects.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProjects.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvProjects.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.createdAtDataGridViewTextBoxColumn,
             this.teamsProjectsDataGridViewTextBoxColumn,
             this.activitiesDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.projectBindingSource;
+            this.dgvProjects.DataSource = this.projectBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,13 +70,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 55);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 239);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProjects.Location = new System.Drawing.Point(27, 55);
+            this.dgvProjects.MultiSelect = false;
+            this.dgvProjects.Name = "dgvProjects";
+            this.dgvProjects.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvProjects.Size = new System.Drawing.Size(985, 239);
+            this.dgvProjects.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -158,11 +158,11 @@
             this.Controls.Add(this.btnUpdateProject);
             this.Controls.Add(this.btnAddProject);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProjects);
             this.Name = "ucProjects";
             this.Size = new System.Drawing.Size(1060, 468);
             this.Load += new System.EventHandler(this.ucProjects_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,7 +171,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProjects;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
