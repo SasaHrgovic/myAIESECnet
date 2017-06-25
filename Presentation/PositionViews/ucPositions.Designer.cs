@@ -55,6 +55,7 @@
             this.btnUpdatePosition.TabIndex = 7;
             this.btnUpdatePosition.Text = "Ažuriraj";
             this.btnUpdatePosition.UseVisualStyleBackColor = true;
+            this.btnUpdatePosition.Click += new System.EventHandler(this.btnUpdatePosition_Click);
             // 
             // btnAddPosition
             // 

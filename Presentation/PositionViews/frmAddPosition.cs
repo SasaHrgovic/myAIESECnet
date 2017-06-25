@@ -21,6 +21,11 @@ namespace Presentation.PositionViews
             InitializeComponent();
         }
 
+        public frmAddPosition(Position positionToUpdate)
+        {
+            _positionToUpdate = positionToUpdate;
+        }
+
         private void DisplayTeams()
         {
             TeamLogic t = new TeamLogic();
@@ -40,6 +45,14 @@ namespace Presentation.PositionViews
         {
             DisplayTeams();
             DisplayRoles();
+            if (_positionToUpdate != null)
+            {
+                txtName.Text = _positionToUpdate.Name;
+                txtDescription.Text = _positionToUpdate.Description;
+                cboRole.SelectedValue = _positionToUpdate.RoleId;
+                cboTeam.SelectedValue = _positionToUpdate.TeamId;
+
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,6 +65,10 @@ namespace Presentation.PositionViews
             if (_positionToUpdate == null)
             {
                 PositionLogic.Add(p);
+            }
+            else
+            {
+                PositionLogic.Update(_positionToUpdate, p);
             }
             Close();
         }
