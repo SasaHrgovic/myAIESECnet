@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdateActivity = new System.Windows.Forms.Button();
             this.btnAddActivity = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.btnUpdateActivity.TabIndex = 9;
             this.btnUpdateActivity.Text = "Ažuriraj";
             this.btnUpdateActivity.UseVisualStyleBackColor = true;
+            this.btnUpdateActivity.Click += new System.EventHandler(this.btnUpdateActivity_Click);
             // 
             // btnAddActivity
             // 
@@ -55,6 +56,7 @@
             this.btnAddActivity.TabIndex = 8;
             this.btnAddActivity.Text = "Dodaj";
             this.btnAddActivity.UseVisualStyleBackColor = true;
+            this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
             // 
             // lblTitle
             // 
@@ -75,14 +77,14 @@
             this.dgvActivities.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvActivities.BackgroundColor = System.Drawing.Color.White;
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvActivities.Location = new System.Drawing.Point(16, 51);
             this.dgvActivities.MultiSelect = false;
             this.dgvActivities.Name = "dgvActivities";
@@ -100,6 +102,7 @@
             this.Controls.Add(this.dgvActivities);
             this.Name = "ucActivities";
             this.Size = new System.Drawing.Size(1060, 468);
+            this.Load += new System.EventHandler(this.ucActivities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
