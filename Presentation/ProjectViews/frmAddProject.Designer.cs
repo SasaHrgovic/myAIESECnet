@@ -113,7 +113,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "frmAddProject";
-            this.Text = "frmAddProject";
+            this.Text = "Projekt";
             this.Load += new System.EventHandler(this.frmAddProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

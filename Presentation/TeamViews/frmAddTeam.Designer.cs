@@ -256,7 +256,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "frmAddTeam";
-            this.Text = "Dodaj novi tim";
+            this.Text = "Tim";
             this.Load += new System.EventHandler(this.frmAddTeam_Load);
             this.gbxTeamType.ResumeLayout(false);
             this.gbxTeamType.PerformLayout();
