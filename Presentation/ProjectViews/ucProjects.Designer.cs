@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProjects = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,19 +63,19 @@
             this.teamsProjectsDataGridViewTextBoxColumn,
             this.activitiesDataGridViewTextBoxColumn});
             this.dgvProjects.DataSource = this.projectBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProjects.Location = new System.Drawing.Point(27, 55);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProjects.Location = new System.Drawing.Point(24, 50);
             this.dgvProjects.MultiSelect = false;
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvProjects.Size = new System.Drawing.Size(985, 239);
+            this.dgvProjects.Size = new System.Drawing.Size(1010, 200);
             this.dgvProjects.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -124,7 +124,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.Location = new System.Drawing.Point(23, 19);
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(71, 24);
             this.lblTitle.TabIndex = 2;
@@ -133,7 +133,7 @@
             // btnUpdateProject
             // 
             this.btnUpdateProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdateProject.Location = new System.Drawing.Point(854, 300);
+            this.btnUpdateProject.Location = new System.Drawing.Point(878, 260);
             this.btnUpdateProject.Name = "btnUpdateProject";
             this.btnUpdateProject.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateProject.TabIndex = 5;
@@ -143,7 +143,7 @@
             // btnAddProject
             // 
             this.btnAddProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddProject.Location = new System.Drawing.Point(935, 300);
+            this.btnAddProject.Location = new System.Drawing.Point(959, 260);
             this.btnAddProject.Name = "btnAddProject";
             this.btnAddProject.Size = new System.Drawing.Size(75, 23);
             this.btnAddProject.TabIndex = 4;

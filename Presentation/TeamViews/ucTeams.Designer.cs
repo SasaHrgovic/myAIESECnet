@@ -41,10 +41,10 @@
             this.btnAddTeam = new System.Windows.Forms.Button();
             this.btnUpdateTeam = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblTeamMembers = new System.Windows.Forms.Label();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblTeamMembers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,12 +71,12 @@
             this.endDataGridViewTextBoxColumn,
             this.committeeIdDataGridViewTextBoxColumn});
             this.dgvTeams.DataSource = this.teamBindingSource;
-            this.dgvTeams.Location = new System.Drawing.Point(35, 70);
+            this.dgvTeams.Location = new System.Drawing.Point(24, 50);
             this.dgvTeams.Margin = new System.Windows.Forms.Padding(20);
             this.dgvTeams.MultiSelect = false;
             this.dgvTeams.Name = "dgvTeams";
             this.dgvTeams.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTeams.Size = new System.Drawing.Size(668, 186);
+            this.dgvTeams.Size = new System.Drawing.Size(668, 200);
             this.dgvTeams.TabIndex = 0;
             this.dgvTeams.SelectionChanged += new System.EventHandler(this.dgvTeams_SelectionChanged);
             // 
@@ -124,7 +124,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.Location = new System.Drawing.Point(31, 34);
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(257, 24);
             this.lblTitle.TabIndex = 1;
@@ -133,7 +133,7 @@
             // btnAddTeam
             // 
             this.btnAddTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTeam.Location = new System.Drawing.Point(628, 262);
+            this.btnAddTeam.Location = new System.Drawing.Point(617, 260);
             this.btnAddTeam.Name = "btnAddTeam";
             this.btnAddTeam.Size = new System.Drawing.Size(75, 23);
             this.btnAddTeam.TabIndex = 2;
@@ -144,7 +144,7 @@
             // btnUpdateTeam
             // 
             this.btnUpdateTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdateTeam.Location = new System.Drawing.Point(547, 262);
+            this.btnUpdateTeam.Location = new System.Drawing.Point(536, 260);
             this.btnUpdateTeam.Name = "btnUpdateTeam";
             this.btnUpdateTeam.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateTeam.TabIndex = 3;
@@ -167,28 +167,13 @@
             this.nameDataGridViewTextBoxColumn1,
             this.surnameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.userBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(743, 70);
+            this.dataGridView1.Location = new System.Drawing.Point(725, 50);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(20);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(346, 186);
+            this.dataGridView1.Size = new System.Drawing.Size(368, 200);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // lblTeamMembers
-            // 
-            this.lblTeamMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTeamMembers.AutoSize = true;
-            this.lblTeamMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTeamMembers.Location = new System.Drawing.Point(739, 34);
-            this.lblTeamMembers.Name = "lblTeamMembers";
-            this.lblTeamMembers.Size = new System.Drawing.Size(72, 24);
-            this.lblTeamMembers.TabIndex = 5;
-            this.lblTeamMembers.Text = "Članovi";
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(Data.User);
             // 
             // nameDataGridViewTextBoxColumn1
             // 
@@ -201,6 +186,21 @@
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(Data.User);
+            // 
+            // lblTeamMembers
+            // 
+            this.lblTeamMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTeamMembers.AutoSize = true;
+            this.lblTeamMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTeamMembers.Location = new System.Drawing.Point(721, 15);
+            this.lblTeamMembers.Name = "lblTeamMembers";
+            this.lblTeamMembers.Size = new System.Drawing.Size(72, 24);
+            this.lblTeamMembers.TabIndex = 5;
+            this.lblTeamMembers.Text = "Članovi";
             // 
             // ucTeams
             // 
