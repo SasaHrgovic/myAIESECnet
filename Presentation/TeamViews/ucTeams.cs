@@ -24,7 +24,6 @@ namespace Presentation.TeamViews
                 return _instance;
             }
         }
-        private int _selectedTeamIndex;
         public ucTeams()
         {
             InitializeComponent();

@@ -139,6 +139,7 @@
             this.btnUpdateProject.TabIndex = 5;
             this.btnUpdateProject.Text = "Ažuriraj";
             this.btnUpdateProject.UseVisualStyleBackColor = true;
+            this.btnUpdateProject.Click += new System.EventHandler(this.btnUpdateProject_Click);
             // 
             // btnAddProject
             // 
@@ -147,7 +148,7 @@
             this.btnAddProject.Name = "btnAddProject";
             this.btnAddProject.Size = new System.Drawing.Size(75, 23);
             this.btnAddProject.TabIndex = 4;
-            this.btnAddProject.Text = "Dodaj tim";
+            this.btnAddProject.Text = "Dodaj";
             this.btnAddProject.UseVisualStyleBackColor = true;
             this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
             // 
