@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityViews\ucActivities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActivityViews\ucActivities.Designer.cs">
+      <DependentUpon>ucActivities.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ActivityViews\ucActivities.resx">
+      <DependentUpon>ucActivities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +165,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\Data.Activity.datasource" />
     <None Include="Properties\DataSources\Data.Project.datasource" />
     <None Include="Properties\DataSources\Data.Team.datasource" />
     <None Include="Properties\DataSources\Data.User.datasource" />

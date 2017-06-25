@@ -108,6 +108,7 @@
             this.lblActivities.Size = new System.Drawing.Size(105, 25);
             this.lblActivities.TabIndex = 5;
             this.lblActivities.Text = "Aktivnosti";
+            this.lblActivities.Click += new System.EventHandler(this.lblActivities_Click);
             // 
             // lblCommitties
             // 

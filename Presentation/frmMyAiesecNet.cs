@@ -11,6 +11,7 @@ using Presentation.TeamViews;
 using Presentation.ProjectViews;
 using Logic;
 using Presentation.PositionViews;
+using Presentation.ActivityViews;
 
 namespace Presentation
 {
@@ -83,6 +84,22 @@ namespace Presentation
             else
             {
                 ucPositions.Instance.BringToFront();
+            }
+        }
+
+        private void lblActivities_Click(object sender, EventArgs e)
+        {
+            ClearLabels();
+            lblActivities.Font = new Font(lblActivities.Font.Name, lblActivities.Font.SizeInPoints, FontStyle.Underline);
+            if (!pnlContainer.Controls.Contains(ucActivities.Instance))
+            {
+                pnlContainer.Controls.Add(ucActivities.Instance);
+                ucActivities.Instance.Dock = DockStyle.Fill;
+                ucActivities.Instance.BringToFront();
+            }
+            else
+            {
+                ucActivities.Instance.BringToFront();
             }
         }
     }

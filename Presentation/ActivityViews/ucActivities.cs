@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic;
 
 namespace Presentation.ActivityViews
 {
@@ -29,7 +30,8 @@ namespace Presentation.ActivityViews
 
         private void ShowActivities()
         {
-
+            activityBindingSource.DataSource = null;
+            activityBindingSource.DataSource = ActivityLogic.Get();
         }
         private void ucActivities_Load(object sender, EventArgs e)
         {
