@@ -60,6 +60,12 @@
     <Compile Include="frmRegistration.Designer.cs">
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="PositionViews\ucPositions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PositionViews\ucPositions.Designer.cs">
+      <DependentUpon>ucPositions.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectViews\frmAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistration.resx">
       <DependentUpon>frmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PositionViews\ucPositions.resx">
+      <DependentUpon>ucPositions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectViews\frmAddProject.resx">
       <DependentUpon>frmAddProject.cs</DependentUpon>

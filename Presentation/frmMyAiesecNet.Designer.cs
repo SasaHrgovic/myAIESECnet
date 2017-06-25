@@ -152,6 +152,7 @@
             this.lblPositions.Size = new System.Drawing.Size(87, 25);
             this.lblPositions.TabIndex = 9;
             this.lblPositions.Text = "Pozicije";
+            this.lblPositions.Click += new System.EventHandler(this.lblPositions_Click);
             // 
             // frmMyAiesecNet
             // 

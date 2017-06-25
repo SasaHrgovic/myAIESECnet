@@ -33,7 +33,6 @@
             this.btnAddPosition = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvPositions = new System.Windows.Forms.DataGridView();
-            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             this.roleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersTeamsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPositions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // btnUpdatePosition
             // 
             this.btnUpdatePosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdatePosition.Location = new System.Drawing.Point(498, 306);
+            this.btnUpdatePosition.Location = new System.Drawing.Point(529, 260);
             this.btnUpdatePosition.Name = "btnUpdatePosition";
             this.btnUpdatePosition.Size = new System.Drawing.Size(75, 23);
             this.btnUpdatePosition.TabIndex = 7;
@@ -59,7 +59,7 @@
             // btnAddPosition
             // 
             this.btnAddPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPosition.Location = new System.Drawing.Point(589, 306);
+            this.btnAddPosition.Location = new System.Drawing.Point(610, 260);
             this.btnAddPosition.Name = "btnAddPosition";
             this.btnAddPosition.Size = new System.Drawing.Size(75, 23);
             this.btnAddPosition.TabIndex = 6;
@@ -71,11 +71,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.Location = new System.Drawing.Point(16, 37);
+            this.lblTitle.Location = new System.Drawing.Point(20, 15);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(257, 24);
+            this.lblTitle.Size = new System.Drawing.Size(125, 24);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Popis timova lokalnog odbora";
+            this.lblTitle.Text = "Popis pozicija";
             // 
             // dgvPositions
             // 
@@ -99,17 +99,13 @@
             this.roleDataGridViewTextBoxColumn,
             this.usersTeamsDataGridViewTextBoxColumn});
             this.dgvPositions.DataSource = this.positionBindingSource;
-            this.dgvPositions.Location = new System.Drawing.Point(20, 73);
+            this.dgvPositions.Location = new System.Drawing.Point(24, 45);
             this.dgvPositions.Margin = new System.Windows.Forms.Padding(20);
             this.dgvPositions.MultiSelect = false;
             this.dgvPositions.Name = "dgvPositions";
             this.dgvPositions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvPositions.Size = new System.Drawing.Size(661, 224);
+            this.dgvPositions.Size = new System.Drawing.Size(661, 200);
             this.dgvPositions.TabIndex = 4;
-            // 
-            // positionBindingSource
-            // 
-            this.positionBindingSource.DataSource = typeof(Data.Position);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -162,7 +158,11 @@
             this.usersTeamsDataGridViewTextBoxColumn.Name = "usersTeamsDataGridViewTextBoxColumn";
             this.usersTeamsDataGridViewTextBoxColumn.Visible = false;
             // 
-            // ucProjects
+            // positionBindingSource
+            // 
+            this.positionBindingSource.DataSource = typeof(Data.Position);
+            // 
+            // ucPositions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +170,7 @@
             this.Controls.Add(this.btnAddPosition);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvPositions);
-            this.Name = "ucProjects";
+            this.Name = "ucPositions";
             this.Size = new System.Drawing.Size(701, 343);
             this.Load += new System.EventHandler(this.ucPositions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPositions)).EndInit();

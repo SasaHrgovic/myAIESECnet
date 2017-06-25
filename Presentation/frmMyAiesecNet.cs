@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentation.TeamViews;
 using Presentation.ProjectViews;
 using Logic;
+using Presentation.PositionViews;
 
 namespace Presentation
 {
@@ -66,6 +67,22 @@ namespace Presentation
             if (Session.roleId == 2)
             {
                 lblCommitties.Visible = false;
+            }
+        }
+
+        private void lblPositions_Click(object sender, EventArgs e)
+        {
+            ClearLabels();
+            lblPositions.Font = new Font(lblPositions.Font.Name, lblPositions.Font.SizeInPoints, FontStyle.Underline);
+            if (!pnlContainer.Controls.Contains(ucPositions.Instance))
+            {
+                pnlContainer.Controls.Add(ucPositions.Instance);
+                ucPositions.Instance.Dock = DockStyle.Fill;
+                ucPositions.Instance.BringToFront();
+            }
+            else
+            {
+                ucPositions.Instance.BringToFront();
             }
         }
     }
