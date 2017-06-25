@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic;
 
 namespace Presentation.PositionViews
 {
@@ -28,14 +29,22 @@ namespace Presentation.PositionViews
             InitializeComponent();
         }
 
+        private void ShowPositions()
+        {
+            positionBindingSource.DataSource = null;
+            positionBindingSource.DataSource = PositionLogic.Get();
+        }
+
         private void btnAddPosition_Click(object sender, EventArgs e)
         {
-
+            frmAddPosition f = new frmAddPosition();
+            f.ShowDialog();
+            ShowPositions();
         }
 
         private void ucPositions_Load(object sender, EventArgs e)
         {
-
+            ShowPositions();
         }
     }
 }
