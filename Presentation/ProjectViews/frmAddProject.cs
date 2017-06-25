@@ -49,5 +49,14 @@ namespace Presentation.ProjectViews
                 Close();
             }
         }
+
+        private void frmAddProject_Load(object sender, EventArgs e)
+        {
+            if (_projectToUpdate != null)
+            {
+                txtName.Text = _projectToUpdate.Name;
+                txtDescription.Text = _projectToUpdate.Description;
+            }
+        }
     }
 }

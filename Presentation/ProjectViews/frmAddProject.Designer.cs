@@ -103,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(485, 254);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCancel);
@@ -113,6 +114,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmAddProject";
             this.Text = "frmAddProject";
+            this.Load += new System.EventHandler(this.frmAddProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
