@@ -36,6 +36,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblActivities = new System.Windows.Forms.Label();
             this.lblCommitties = new System.Windows.Forms.Label();
+            this.lblConferences = new System.Windows.Forms.Label();
+            this.lblMeetings = new System.Windows.Forms.Label();
+            this.lblPositions = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             this.lblTeams.AutoSize = true;
             this.lblTeams.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeams.Location = new System.Drawing.Point(109, 18);
+            this.lblTeams.Location = new System.Drawing.Point(459, 18);
             this.lblTeams.Name = "lblTeams";
             this.lblTeams.Size = new System.Drawing.Size(75, 25);
             this.lblTeams.TabIndex = 1;
@@ -77,7 +80,7 @@
             this.lblProjects.AutoSize = true;
             this.lblProjects.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProjects.Location = new System.Drawing.Point(190, 18);
+            this.lblProjects.Location = new System.Drawing.Point(633, 18);
             this.lblProjects.Name = "lblProjects";
             this.lblProjects.Size = new System.Drawing.Size(84, 25);
             this.lblProjects.TabIndex = 3;
@@ -100,7 +103,7 @@
             this.lblActivities.AutoSize = true;
             this.lblActivities.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivities.Location = new System.Drawing.Point(280, 18);
+            this.lblActivities.Location = new System.Drawing.Point(109, 18);
             this.lblActivities.Name = "lblActivities";
             this.lblActivities.Size = new System.Drawing.Size(105, 25);
             this.lblActivities.TabIndex = 5;
@@ -111,11 +114,44 @@
             this.lblCommitties.AutoSize = true;
             this.lblCommitties.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCommitties.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommitties.Location = new System.Drawing.Point(391, 18);
+            this.lblCommitties.Location = new System.Drawing.Point(723, 18);
             this.lblCommitties.Name = "lblCommitties";
             this.lblCommitties.Size = new System.Drawing.Size(76, 25);
             this.lblCommitties.TabIndex = 6;
             this.lblCommitties.Text = "Odbori";
+            // 
+            // lblConferences
+            // 
+            this.lblConferences.AutoSize = true;
+            this.lblConferences.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblConferences.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConferences.Location = new System.Drawing.Point(220, 18);
+            this.lblConferences.Name = "lblConferences";
+            this.lblConferences.Size = new System.Drawing.Size(132, 25);
+            this.lblConferences.TabIndex = 7;
+            this.lblConferences.Text = "Konferencije";
+            // 
+            // lblMeetings
+            // 
+            this.lblMeetings.AutoSize = true;
+            this.lblMeetings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMeetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeetings.Location = new System.Drawing.Point(358, 18);
+            this.lblMeetings.Name = "lblMeetings";
+            this.lblMeetings.Size = new System.Drawing.Size(95, 25);
+            this.lblMeetings.TabIndex = 8;
+            this.lblMeetings.Text = "Sastanci";
+            // 
+            // lblPositions
+            // 
+            this.lblPositions.AutoSize = true;
+            this.lblPositions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPositions.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPositions.Location = new System.Drawing.Point(540, 18);
+            this.lblPositions.Name = "lblPositions";
+            this.lblPositions.Size = new System.Drawing.Size(87, 25);
+            this.lblPositions.TabIndex = 9;
+            this.lblPositions.Text = "Pozicije";
             // 
             // frmMyAiesecNet
             // 
@@ -123,6 +159,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1015, 555);
+            this.Controls.Add(this.lblPositions);
+            this.Controls.Add(this.lblMeetings);
+            this.Controls.Add(this.lblConferences);
             this.Controls.Add(this.lblCommitties);
             this.Controls.Add(this.lblActivities);
             this.Controls.Add(this.pictureBox1);
@@ -149,5 +188,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblActivities;
         private System.Windows.Forms.Label lblCommitties;
+        private System.Windows.Forms.Label lblConferences;
+        private System.Windows.Forms.Label lblMeetings;
+        private System.Windows.Forms.Label lblPositions;
     }
 }
