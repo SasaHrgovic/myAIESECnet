@@ -9,7 +9,7 @@ namespace Logic
 {
     public class PositionLogic
     {
-        public List<Position> Get()
+        public static List<Position> Get()
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -18,7 +18,7 @@ namespace Logic
             }
         }
 
-        public void Add(Position newPosition)
+        public static void Add(Position newPosition)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -27,7 +27,7 @@ namespace Logic
             }
         }
 
-        public void Update(Position positionToUpdate, Position newPosition)
+        public static void Update(Position positionToUpdate, Position newPosition)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -38,7 +38,7 @@ namespace Logic
             }
         }
 
-        public void Delete(Position positionToUpdate)
+        public static void Delete(Position positionToUpdate)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
