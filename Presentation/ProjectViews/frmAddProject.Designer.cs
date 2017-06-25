@@ -97,6 +97,7 @@
             this.btnRemove.TabIndex = 6;
             this.btnRemove.Text = "Izbriši";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // frmAddProject
             // 

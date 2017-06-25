@@ -18,7 +18,7 @@ namespace Logic
             }
         }
 
-        public void Add(Project newProject)
+        public static void Add(Project newProject)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -27,7 +27,7 @@ namespace Logic
             }
         }
 
-        public void Update(Project projectToUpdate, Project newProject)
+        public static void Update(Project projectToUpdate, Project newProject)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
@@ -38,7 +38,7 @@ namespace Logic
             }
         }
 
-        public void Delete(Project projectToUpdate)
+        public static void Delete(Project projectToUpdate)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {

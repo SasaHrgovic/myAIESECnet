@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
+using Data;
 
 namespace Presentation.ProjectViews
 {
@@ -43,6 +44,13 @@ namespace Presentation.ProjectViews
         private void btnAddProject_Click(object sender, EventArgs e)
         {
             frmAddProject f = new frmAddProject();
+            f.ShowDialog();
+            ShowProjects();
+        }
+
+        private void btnUpdateProject_Click(object sender, EventArgs e)
+        {
+            frmAddProject f = new frmAddProject(dgvProjects.CurrentRow.DataBoundItem as Project);
             f.ShowDialog();
             ShowProjects();
         }
