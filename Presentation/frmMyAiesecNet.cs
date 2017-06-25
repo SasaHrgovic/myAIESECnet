@@ -12,6 +12,7 @@ using Presentation.ProjectViews;
 using Logic;
 using Presentation.PositionViews;
 using Presentation.ActivityViews;
+using Data;
 
 namespace Presentation
 {
@@ -69,6 +70,9 @@ namespace Presentation
             {
                 lblCommitties.Visible = false;
             }
+            ActivitiesTimer.SetActivitiesList();
+            tmrActivities.Enabled = true;
+            tmrActivities.Start();
         }
 
         private void lblPositions_Click(object sender, EventArgs e)
@@ -100,6 +104,18 @@ namespace Presentation
             else
             {
                 ucActivities.Instance.BringToFront();
+            }
+        }
+
+        private void tmrActivities_Tick(object sender, EventArgs e)
+        {
+            Activity a = ActivitiesTimer.CheckDeadline();
+            if (a != null)
+            {
+                ntfDeadline.Visible = true;
+                ntfDeadline.BalloonTipTitle = a.Name;
+                ntfDeadline.BalloonTipText = a.Description;
+                ntfDeadline.ShowBalloonTip(1000);
             }
         }
     }

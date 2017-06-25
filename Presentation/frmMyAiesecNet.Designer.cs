@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMyAiesecNet));
             this.lblHome = new System.Windows.Forms.Label();
             this.lblTeams = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.lblConferences = new System.Windows.Forms.Label();
             this.lblMeetings = new System.Windows.Forms.Label();
             this.lblPositions = new System.Windows.Forms.Label();
+            this.tmrActivities = new System.Windows.Forms.Timer(this.components);
+            this.ntfDeadline = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +158,18 @@
             this.lblPositions.Text = "Pozicije";
             this.lblPositions.Click += new System.EventHandler(this.lblPositions_Click);
             // 
+            // tmrActivities
+            // 
+            this.tmrActivities.Interval = 60000;
+            this.tmrActivities.Tick += new System.EventHandler(this.tmrActivities_Tick);
+            // 
+            // ntfDeadline
+            // 
+            this.ntfDeadline.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ntfDeadline.Icon = ((System.Drawing.Icon)(resources.GetObject("ntfDeadline.Icon")));
+            this.ntfDeadline.Text = "ntfDeadline";
+            this.ntfDeadline.Visible = true;
+            // 
             // frmMyAiesecNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +208,7 @@
         private System.Windows.Forms.Label lblConferences;
         private System.Windows.Forms.Label lblMeetings;
         private System.Windows.Forms.Label lblPositions;
+        private System.Windows.Forms.Timer tmrActivities;
+        private System.Windows.Forms.NotifyIcon ntfDeadline;
     }
 }
