@@ -14,6 +14,8 @@ namespace Presentation.PositionViews
 {
     public partial class frmAddPosition : Form
     {
+        private Position _positionToUpdate;
+
         public frmAddPosition()
         {
             InitializeComponent();
@@ -27,9 +29,17 @@ namespace Presentation.PositionViews
             cboTeam.ValueMember = "Id";
         }
 
+        private void DisplayRoles()
+        {
+            cboRole.DataSource = RoleLogic.Get();
+            cboRole.DisplayMember = "Name";
+            cboRole.ValueMember = "Id";
+        }
+
         private void frmAddPosition_Load(object sender, EventArgs e)
         {
             DisplayTeams();
+            DisplayRoles();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -38,6 +48,12 @@ namespace Presentation.PositionViews
             p.Name = txtName.Text;
             p.Description = txtDescription.Text;
             p.TeamId = int.Parse(cboTeam.SelectedValue.ToString());
+            p.RoleId = int.Parse(cboRole.SelectedValue.ToString());
+            if (_positionToUpdate == null)
+            {
+                PositionLogic.Add(p);
+            }
+            Close();
         }
     }
 }
