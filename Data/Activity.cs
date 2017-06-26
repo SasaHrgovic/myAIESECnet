@@ -16,12 +16,12 @@ namespace Data
         public string Description { get; set; }
         [Required]
         public DateTime Created { get; set; }
-        public DateTime Deadline { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public DateTime? Deadline { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? End { get; set; }
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
         public virtual ICollection<User> Users { get; set; }
 
