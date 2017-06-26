@@ -40,12 +40,16 @@ namespace Presentation.ActivityViews
 
         private void btnAddActivity_Click(object sender, EventArgs e)
         {
-
+            frmAddActivity f = new frmAddActivity();
+            f.ShowDialog();
+            ShowActivities();
         }
 
         private void btnUpdateActivity_Click(object sender, EventArgs e)
         {
-
+            frmAddActivity f = new frmAddActivity();
+            f.ShowDialog();
+            ShowActivities();
         }
     }
 }
