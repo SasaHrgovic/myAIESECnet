@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data;
+using System.Text.RegularExpressions;
 
 namespace Logic
 {
@@ -19,6 +20,14 @@ namespace Logic
                 db.SaveChanges();
                 return true;
             }
+        }
+
+        public bool CheckEmail(string email)
+        {
+            Regex r = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+            Match m = r.Match(email);
+            if (m.Success) return true;
+            else return false;
         }
     }
 }

@@ -60,15 +60,11 @@ namespace Logic
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
-                User u = db.Users.FirstOrDefault(x => x.Email == email);
+                User u = db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
                 if (u != null)
                 {
-                    if (u.Password == password)
-                    {
-                        SetToSession(u);
-                        return true;
-                    }
-                    else return false;
+                    SetToSession(u);
+                    return true;
                 }
                
                 else return false;
