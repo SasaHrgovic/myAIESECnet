@@ -1,4 +1,5 @@
 ﻿using Data;
+using Logic.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,11 +38,34 @@ namespace Logic
             return listArray;
         }    
 
-        private void SetToSession(User u)
+        private static void SetToSession(User u)
         {
             Session.userId = u.Id;
             Session.committeeId = u.CommitteeId;
             Session.roleId = (u.UsersRoles.FirstOrDefault()).RoleId;
+            Settings.Default.Email = u.Email;
+            Settings.Default.Save();
+        }
+
+        public static bool LoginFromSession()
+        {
+            if (Settings.Default.Email != null)
+            {
+                using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+                {
+                    User u = db.Users.FirstOrDefault(x => x.Email == Settings.Default.Email);
+                    if (u != null)
+                    {
+                        SetToSession(u);
+                        return true;
+                    }
+
+                    else return false;
+
+                }
+
+            }
+            else return false;
         }
 
         public bool Login(string email, string password)
@@ -53,10 +77,8 @@ namespace Logic
                 {
                     SetToSession(u);
                     return true;
-                }
-               
-                else return false;
-                
+                }               
+                else return false;               
             }
               
         }

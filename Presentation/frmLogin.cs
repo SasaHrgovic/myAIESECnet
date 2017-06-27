@@ -23,17 +23,19 @@ namespace Presentation
             this.Close();
         }
 
+        private void RunMainForm ()
+        {
+            frmMyAiesecNet a = new frmMyAiesecNet();
+            a.Show();
+            a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
+            this.Visible = false;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
             LoginLogic login = new LoginLogic();
-            if (login.Login(txtEmail.Text, txtPassword.Text))
-            {
-                frmMyAiesecNet a = new frmMyAiesecNet();
-                a.Show();
-                a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
-                this.Visible = false;
-            }
+            if (login.Login(txtEmail.Text, txtPassword.Text)) RunMainForm();
             else
             {
                 MessageBox.Show("Email ili lozinka nisu ispravni!", "Netočni podaci", MessageBoxButtons.OK);
@@ -49,6 +51,15 @@ namespace Presentation
             this.Visible = false;
             formar.ShowDialog();
             this.Visible = true;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            if (LoginLogic.LoginFromSession())
+            {
+                RunMainForm();
+                //this.Visible = false;
+            }
         }
     }
 }
