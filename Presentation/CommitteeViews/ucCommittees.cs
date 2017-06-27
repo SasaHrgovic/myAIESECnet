@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
+using Data;
 
 namespace Presentation.CommitteeViews
 {
@@ -36,6 +37,20 @@ namespace Presentation.CommitteeViews
 
         private void ucCommittees_Load(object sender, EventArgs e)
         {
+            ShowCommittees();
+        }
+
+        private void btnAddCommittee_Click(object sender, EventArgs e)
+        {
+            frmAddCommittee c = new frmAddCommittee();
+            c.ShowDialog();
+            ShowCommittees();
+        }
+
+        private void btnUpdateCommittee_Click(object sender, EventArgs e)
+        {
+            frmAddCommittee c = new frmAddCommittee(dgvCommittees.CurrentRow.DataBoundItem as Committee);
+            c.ShowDialog();
             ShowCommittees();
         }
     }

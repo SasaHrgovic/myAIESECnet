@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdateCommittee = new System.Windows.Forms.Button();
             this.btnAddCommittee = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.btnUpdateCommittee.TabIndex = 9;
             this.btnUpdateCommittee.Text = "Ažuriraj";
             this.btnUpdateCommittee.UseVisualStyleBackColor = true;
+            this.btnUpdateCommittee.Click += new System.EventHandler(this.btnUpdateCommittee_Click);
             // 
             // btnAddCommittee
             // 
@@ -62,6 +63,7 @@
             this.btnAddCommittee.TabIndex = 8;
             this.btnAddCommittee.Text = "Dodaj";
             this.btnAddCommittee.UseVisualStyleBackColor = true;
+            this.btnAddCommittee.Click += new System.EventHandler(this.btnAddCommittee_Click);
             // 
             // lblTitle
             // 
@@ -89,14 +91,14 @@
             this.usersDataGridViewTextBoxColumn,
             this.teamsDataGridViewTextBoxColumn});
             this.dgvCommittees.DataSource = this.committeeBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCommittees.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCommittees.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCommittees.Location = new System.Drawing.Point(15, 43);
             this.dgvCommittees.MultiSelect = false;
             this.dgvCommittees.Name = "dgvCommittees";
