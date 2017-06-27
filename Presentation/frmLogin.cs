@@ -18,6 +18,11 @@ namespace Presentation
             InitializeComponent();
         }
 
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -26,6 +31,7 @@ namespace Presentation
             {
                 frmMyAiesecNet a = new frmMyAiesecNet();
                 a.Show();
+                a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
                 this.Visible = false;
             }
             else

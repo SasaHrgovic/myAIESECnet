@@ -22,12 +22,23 @@ namespace Logic
             }
         }
 
-        public bool CheckEmail(string email)
+        public static bool CheckEmail(string email)
         {
             Regex r = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
             Match m = r.Match(email);
             if (m.Success) return true;
             else return false;
+        }
+
+        public static bool CheckExistingEmail(string email)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                User u = db.Users.FirstOrDefault(x => x.Email == email);
+                if (u != null) return true;
+                else return false;
+            }
+               
         }
     }
 }

@@ -27,14 +27,49 @@ namespace Presentation
             this.Close();
         }
 
+        private bool CheckPassword()
+        {
+            if (txtPassword == txtPassword2) return true;
+            else
+            {
+                MessageBox.Show("Neispravna lozinka!", "Upozorenje", MessageBoxButtons.OK);
+                txtPassword.Clear();
+                txtPassword2.Clear();
+                return false;
+            }
+        }
+
+        private bool ValidateEmail()
+        {
+            if (RegistrationLogic.CheckEmail(txtEmail.Text)) return true;
+            else
+            {
+                MessageBox.Show("E-mail nije ispravnog formata!", "Upozorenje", MessageBoxButtons.OK);
+                txtEmail.Clear();
+                return false;
+            }        
+        }
+
+        private bool CheckExistingEmail()
+        {
+            if (RegistrationLogic.CheckExistingEmail(txtEmail.Text)) return true;
+            else
+            {
+                MessageBox.Show("E-mail već postoji!", "Upozorenje", MessageBoxButtons.OK);
+                txtEmail.Clear();
+                return false;
+            }
+        }
+
+
         private void btnRegistriraj_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.Name = txtName.Text;
-            u.Surname = txtSurname.Text;
-            u.Email = txtEmail.Text;
-            if (txtPassword.Text == txtPassword2.Text)
+            if (CheckPassword() & ValidateEmail() & CheckExistingEmail())
             {
+                User u = new User();
+                u.Name = txtName.Text;
+                u.Surname = txtSurname.Text;
+                u.Email = txtEmail.Text;
                 u.Password = txtPassword.Text;
                 u.PhoneNumber = txtPhoneNumber.Text;
                 u.BirthDate = DateTime.Parse(cbxYear.Text + "/" + cbxMonth.Text + "/" + cbxDay.Text);
@@ -46,13 +81,7 @@ namespace Presentation
                     MessageBox.Show("Registracija je uspješna!", "Registracija", MessageBoxButtons.OK);
                     this.Close();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Neispravna lozinka!", "Upozorenje", MessageBoxButtons.OK);
-                txtPassword.Clear();
-                txtPassword2.Clear();    
-            }
+            }   
                        
         }
 
