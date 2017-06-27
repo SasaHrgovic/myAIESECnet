@@ -43,6 +43,7 @@ namespace Presentation.ActivityViews
             frmAddActivity f = new frmAddActivity();
             f.ShowDialog();
             ShowActivities();
+            ActivitiesTimer.SetActivitiesList();
         }
 
         private void btnUpdateActivity_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace Presentation.ActivityViews
             frmAddActivity f = new frmAddActivity();
             f.ShowDialog();
             ShowActivities();
+            ActivitiesTimer.SetActivitiesList();
         }
     }
 }

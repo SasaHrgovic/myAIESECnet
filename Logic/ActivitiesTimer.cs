@@ -21,7 +21,7 @@ namespace Logic
             DateTime currentTime = DateTime.Now;
             foreach(Activity activity in activities)
             {
-                if (Math.Abs((currentTime - activity.Deadline).TotalMinutes) < 1)
+                if (Math.Abs((currentTime - activity.Deadline.Value).TotalMinutes) < 1)
                 {
                     return activity;
                 }

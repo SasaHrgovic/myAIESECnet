@@ -33,8 +33,8 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDeadlineDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpDeadlineTime = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -85,24 +85,24 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Rok izvršavanja";
             // 
-            // dtpStart
+            // dtpDeadlineDate
             // 
-            this.dtpStart.CustomFormat = "dd.MM.yyyy";
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(16, 166);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(260, 20);
-            this.dtpStart.TabIndex = 6;
+            this.dtpDeadlineDate.CustomFormat = "dd.MM.yyyy";
+            this.dtpDeadlineDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeadlineDate.Location = new System.Drawing.Point(16, 166);
+            this.dtpDeadlineDate.Name = "dtpDeadlineDate";
+            this.dtpDeadlineDate.Size = new System.Drawing.Size(260, 20);
+            this.dtpDeadlineDate.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dtpDeadlineTime
             // 
-            this.dateTimePicker1.CustomFormat = "HH:mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(282, 166);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpDeadlineTime.CustomFormat = "HH:mm";
+            this.dtpDeadlineTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDeadlineTime.Location = new System.Drawing.Point(282, 166);
+            this.dtpDeadlineTime.Name = "dtpDeadlineTime";
+            this.dtpDeadlineTime.ShowUpDown = true;
+            this.dtpDeadlineTime.Size = new System.Drawing.Size(118, 20);
+            this.dtpDeadlineTime.TabIndex = 7;
             // 
             // btnSave
             // 
@@ -112,6 +112,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Spremi";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -171,8 +172,8 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dtpStart);
+            this.Controls.Add(this.dtpDeadlineTime);
+            this.Controls.Add(this.dtpDeadlineDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
@@ -192,8 +193,8 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDeadlineDate;
+        private System.Windows.Forms.DateTimePicker dtpDeadlineTime;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRemove;
