@@ -123,6 +123,7 @@
             this.lblCommitties.Size = new System.Drawing.Size(76, 25);
             this.lblCommitties.TabIndex = 6;
             this.lblCommitties.Text = "Odbori";
+            this.lblCommitties.Click += new System.EventHandler(this.lblCommitties_Click);
             // 
             // lblConferences
             // 

@@ -91,7 +91,7 @@ namespace Presentation
             listArray = l.GetDate();
             cbxMonth.DataSource = listArray[0];
             cbxYear.DataSource = listArray[4];
-            cbxCommittee.DataSource = l.GetCommittees();
+            cbxCommittee.DataSource = CommitteeLogic.Get();
             cbxCommittee.ValueMember = "Id";
             cbxCommittee.DisplayMember = "Name";
             

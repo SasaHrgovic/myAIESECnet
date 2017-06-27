@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ActivitiesTimer.cs" />
     <Compile Include="ActivityLogic.cs" />
+    <Compile Include="CommitteeLogic.cs" />
     <Compile Include="PositionLogic.cs" />
     <Compile Include="RoleLogic.cs" />
     <Compile Include="UserListEqualityComparer.cs" />

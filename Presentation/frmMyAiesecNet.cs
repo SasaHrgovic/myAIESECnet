@@ -13,6 +13,7 @@ using Logic;
 using Presentation.PositionViews;
 using Presentation.ActivityViews;
 using Data;
+using Presentation.CommitteeViews;
 
 namespace Presentation
 {
@@ -126,6 +127,22 @@ namespace Presentation
                 ntfDeadline.BalloonTipTitle = a.Name;
                 ntfDeadline.BalloonTipText = a.Description;
                 ntfDeadline.ShowBalloonTip(1000);
+            }
+        }
+
+        private void lblCommitties_Click(object sender, EventArgs e)
+        {
+            ClearLabels();
+            lblCommitties.Font = new Font(lblCommitties.Font.Name, lblCommitties.Font.SizeInPoints, FontStyle.Underline);
+            if (!pnlContainer.Controls.Contains(ucCommittees.Instance))
+            {
+                pnlContainer.Controls.Add(ucCommittees.Instance);
+                ucCommittees.Instance.Dock = DockStyle.Fill;
+                ucCommittees.Instance.BringToFront();
+            }
+            else
+            {
+                ucCommittees.Instance.BringToFront();
             }
         }
     }

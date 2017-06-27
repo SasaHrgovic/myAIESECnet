@@ -35,19 +35,7 @@ namespace Logic
             listArray.Add(years);
 
             return listArray;
-        }
-
-        public List<Committee> GetCommittees()
-        {
-            using(MyAiesecNetDbContext db = new MyAiesecNetDbContext())
-            {
-                List<Committee> committees = db.Committees.ToList();
-                return committees;
-            }
-            
-        }
-
-        
+        }    
 
         private void SetToSession(User u)
         {

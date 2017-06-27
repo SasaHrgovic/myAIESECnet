@@ -54,6 +54,12 @@
     <Compile Include="ActivityViews\ucActivities.Designer.cs">
       <DependentUpon>ucActivities.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommitteeViews\ucCommittees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommitteeViews\ucCommittees.Designer.cs">
+      <DependentUpon>ucCommittees.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="ActivityViews\ucActivities.resx">
       <DependentUpon>ucActivities.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommitteeViews\ucCommittees.resx">
+      <DependentUpon>ucCommittees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\Data.Activity.datasource" />
+    <None Include="Properties\DataSources\Data.Committee.datasource" />
     <None Include="Properties\DataSources\Data.Project.datasource" />
     <None Include="Properties\DataSources\Data.Team.datasource" />
     <None Include="Properties\DataSources\Data.User.datasource" />
