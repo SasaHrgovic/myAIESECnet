@@ -66,10 +66,20 @@ namespace Presentation
 
         private void frmMyAiesecNet_Load(object sender, EventArgs e)
         {
-            if (Session.roleId == 2)
+        
+            if (Session.roleId == 2 || Session.roleId == 3)
             {
                 lblCommitties.Visible = false;
             }
+
+            else if (Session.roleId == 4)
+            {
+                lblCommitties.Visible = false;
+                lblProjects.Visible = false;
+                lblPositions.Visible = false;
+                lblTeams.Visible = false;
+            }
+
             ActivitiesTimer.SetActivitiesList();
             tmrActivities.Enabled = true;
             tmrActivities.Start();
