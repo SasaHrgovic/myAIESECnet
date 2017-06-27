@@ -25,10 +25,12 @@ namespace Presentation
 
         private void RunMainForm ()
         {
+            Visible = false;
             frmMyAiesecNet a = new frmMyAiesecNet();
-            a.Show();
-            a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
-            this.Visible = false;
+            a.ShowDialog();
+            Close();
+            //a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
+            //a.Load += new System.EventHandler(frmMyAiesecNet_Load);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,8 +60,12 @@ namespace Presentation
             if (LoginLogic.LoginFromSession())
             {
                 RunMainForm();
-                //this.Visible = false;
             }
+        }
+
+        private void frmMyAiesecNet_Load(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
