@@ -47,6 +47,7 @@ namespace Logic
             Settings.Default.Save();
         }
 
+
         public static bool LoginFromSession()
         {
             if (Settings.Default.Email != null)
@@ -81,6 +82,21 @@ namespace Logic
                 else return false;               
             }
               
+        }
+
+        public static void LogOut()
+        {
+            Settings.Default.Email = null;
+            Settings.Default.Save();
+        }
+
+        public static bool GetSettings()
+        {
+            if (Settings.Default.Email == null)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

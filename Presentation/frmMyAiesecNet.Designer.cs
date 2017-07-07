@@ -34,7 +34,6 @@
             this.lblTeams = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.lblProjects = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblActivities = new System.Windows.Forms.Label();
             this.lblCommitties = new System.Windows.Forms.Label();
             this.lblConferences = new System.Windows.Forms.Label();
@@ -42,6 +41,8 @@
             this.lblPositions = new System.Windows.Forms.Label();
             this.tmrActivities = new System.Windows.Forms.Timer(this.components);
             this.ntfDeadline = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblLogOut = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.lblHome.Size = new System.Drawing.Size(91, 25);
             this.lblHome.TabIndex = 0;
             this.lblHome.Text = "Početna";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // lblTeams
             // 
@@ -89,17 +91,6 @@
             this.lblProjects.TabIndex = 3;
             this.lblProjects.Text = "Projekti";
             this.lblProjects.Click += new System.EventHandler(this.lblProjects_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Presentation.Properties.Resources.Aiesec_blue_1;
-            this.pictureBox1.Location = new System.Drawing.Point(785, 507);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // lblActivities
             // 
@@ -171,12 +162,35 @@
             this.ntfDeadline.Text = "ntfDeadline";
             this.ntfDeadline.Visible = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Presentation.Properties.Resources.Aiesec_blue_1;
+            this.pictureBox1.Location = new System.Drawing.Point(785, 507);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(218, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblLogOut
+            // 
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLogOut.Location = new System.Drawing.Point(12, 518);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(102, 25);
+            this.lblLogOut.TabIndex = 10;
+            this.lblLogOut.Text = "Odjavi se";
+            this.lblLogOut.Click += new System.EventHandler(this.lblLogOut_Click);
+            // 
             // frmMyAiesecNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1015, 555);
+            this.Controls.Add(this.lblLogOut);
             this.Controls.Add(this.lblPositions);
             this.Controls.Add(this.lblMeetings);
             this.Controls.Add(this.lblConferences);
@@ -211,5 +225,6 @@
         private System.Windows.Forms.Label lblPositions;
         private System.Windows.Forms.Timer tmrActivities;
         private System.Windows.Forms.NotifyIcon ntfDeadline;
+        private System.Windows.Forms.Label lblLogOut;
     }
 }

@@ -132,6 +132,12 @@
     <Compile Include="TeamViews\ucTeams.Designer.cs">
       <DependentUpon>ucTeams.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMain.Designer.cs">
+      <DependentUpon>ucMain.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeamViews\ucTeams.resx">
       <DependentUpon>ucTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMain.resx">
+      <DependentUpon>ucMain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

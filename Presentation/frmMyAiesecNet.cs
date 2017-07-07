@@ -81,6 +81,7 @@ namespace Presentation
                 lblTeams.Visible = false;
             }
 
+            LoadMainUc();
             ActivitiesTimer.SetActivitiesList();
             tmrActivities.Enabled = true;
             tmrActivities.Start();
@@ -144,6 +145,33 @@ namespace Presentation
             {
                 ucCommittees.Instance.BringToFront();
             }
+        }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            LoadMainUc();
+        }
+
+        private void LoadMainUc()
+        {
+            ClearLabels();
+            lblHome.Font = new Font(lblHome.Font.Name, lblHome.Font.SizeInPoints, FontStyle.Underline);
+            if (!pnlContainer.Controls.Contains(ucMain.Instance))
+            {
+                pnlContainer.Controls.Add(ucMain.Instance);
+                ucMain.Instance.Dock = DockStyle.Fill;
+                ucMain.Instance.BringToFront();
+            }
+            else
+            {
+                ucMain.Instance.BringToFront();
+            }
+        }
+
+        private void lblLogOut_Click(object sender, EventArgs e)
+        {
+            LoginLogic.LogOut();
+            this.Close();
         }
     }
 }

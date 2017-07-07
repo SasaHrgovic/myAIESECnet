@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
+using Logic.Properties;
 
 namespace Presentation
 {
@@ -28,9 +29,11 @@ namespace Presentation
             Visible = false;
             frmMyAiesecNet a = new frmMyAiesecNet();
             a.ShowDialog();
-            Close();
-            //a.FormClosed += new FormClosedEventHandler(frmLogin_FormClosed);
-            //a.Load += new System.EventHandler(frmMyAiesecNet_Load);
+            if (LoginLogic.GetSettings())
+            {
+                Visible = true;
+            }
+            else Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

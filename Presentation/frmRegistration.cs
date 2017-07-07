@@ -29,42 +29,64 @@ namespace Presentation
 
         private bool CheckPassword()
         {
-            if (txtPassword == txtPassword2) return true;
-            else
+            if (txtPassword.Text == txtPassword2.Text)
             {
-                MessageBox.Show("Neispravna lozinka!", "Upozorenje", MessageBoxButtons.OK);
-                txtPassword.Clear();
-                txtPassword2.Clear();
-                return false;
+                lblLozinka.Visible = false;
+                return true;
             }
+            else lblLozinka.Visible = true;
+
+            txtPassword.Clear();
+            txtPassword2.Clear();
+            return false;
+
+        }
+
+        private bool CheckPasswordLength()
+        {
+            if (txtPassword.Text.Length >= 6)
+            {
+                lblZnakovi.Visible = false;
+                return true;
+            }
+            else lblZnakovi.Visible = true;
+
+            txtPassword.Clear();
+            txtPassword2.Clear();
+            return false;
         }
 
         private bool ValidateEmail()
         {
-            if (RegistrationLogic.CheckEmail(txtEmail.Text)) return true;
-            else
+            if (RegistrationLogic.CheckEmail(txtEmail.Text))
             {
-                MessageBox.Show("E-mail nije ispravnog formata!", "Upozorenje", MessageBoxButtons.OK);
-                txtEmail.Clear();
-                return false;
-            }        
+                lblEmail.Visible = false;
+                return true;
+            }
+            else lblEmail.Visible = true;
+
+            txtEmail.Clear();
+            return false;
         }
 
         private bool CheckExistingEmail()
         {
-            if (RegistrationLogic.CheckExistingEmail(txtEmail.Text)) return true;
-            else
+            if (RegistrationLogic.CheckExistingEmail(txtEmail.Text))
             {
-                MessageBox.Show("E-mail već postoji!", "Upozorenje", MessageBoxButtons.OK);
-                txtEmail.Clear();
-                return false;
-            }
+                lblEmail.Visible = false;
+                return true;
+            } 
+            else lblEmail.Visible = true;
+           
+
+            txtEmail.Clear();
+            return false;
         }
 
 
         private void btnRegistriraj_Click(object sender, EventArgs e)
         {
-            if (CheckPassword() & ValidateEmail() & CheckExistingEmail())
+            if (CheckPassword() & ValidateEmail() & CheckExistingEmail() & CheckPasswordLength())
             {
                 User u = new User();
                 u.Name = txtName.Text;

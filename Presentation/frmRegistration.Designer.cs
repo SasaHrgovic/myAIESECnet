@@ -48,6 +48,9 @@
             this.lblPrijava = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblLozinka = new System.Windows.Forms.Label();
+            this.lblZnakovi = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtName
@@ -223,11 +226,47 @@
             this.txtPassword2.Size = new System.Drawing.Size(215, 20);
             this.txtPassword2.TabIndex = 19;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblEmail.Location = new System.Drawing.Point(128, 335);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(91, 13);
+            this.lblEmail.TabIndex = 20;
+            this.lblEmail.Text = "Neispravan e-mail";
+            this.lblEmail.Visible = false;
+            // 
+            // lblLozinka
+            // 
+            this.lblLozinka.AutoSize = true;
+            this.lblLozinka.ForeColor = System.Drawing.Color.Red;
+            this.lblLozinka.Location = new System.Drawing.Point(128, 352);
+            this.lblLozinka.Name = "lblLozinka";
+            this.lblLozinka.Size = new System.Drawing.Size(100, 13);
+            this.lblLozinka.TabIndex = 21;
+            this.lblLozinka.Text = "Neispravna lozinka!";
+            this.lblLozinka.Visible = false;
+            // 
+            // lblZnakovi
+            // 
+            this.lblZnakovi.AutoSize = true;
+            this.lblZnakovi.ForeColor = System.Drawing.Color.Red;
+            this.lblZnakovi.Location = new System.Drawing.Point(81, 365);
+            this.lblZnakovi.Name = "lblZnakovi";
+            this.lblZnakovi.Size = new System.Drawing.Size(199, 13);
+            this.lblZnakovi.TabIndex = 22;
+            this.lblZnakovi.Text = "Lozinka mora imati minimalno 6 znakova!";
+            this.lblZnakovi.Visible = false;
+            // 
             // frmRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 391);
+            this.ClientSize = new System.Drawing.Size(372, 391);
+            this.Controls.Add(this.lblZnakovi);
+            this.Controls.Add(this.lblLozinka);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtPassword2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblPrijava);
@@ -278,5 +317,8 @@
         private System.Windows.Forms.LinkLabel lblPrijava;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPassword2;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblLozinka;
+        private System.Windows.Forms.Label lblZnakovi;
     }
 }
