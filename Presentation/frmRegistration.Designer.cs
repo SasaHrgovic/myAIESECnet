@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistration));
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblZnakovi = new System.Windows.Forms.Label();
+            this.lblPostoji = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtName
@@ -259,11 +261,23 @@
             this.lblZnakovi.Text = "Lozinka mora imati minimalno 6 znakova!";
             this.lblZnakovi.Visible = false;
             // 
+            // lblPostoji
+            // 
+            this.lblPostoji.AutoSize = true;
+            this.lblPostoji.ForeColor = System.Drawing.Color.Red;
+            this.lblPostoji.Location = new System.Drawing.Point(127, 322);
+            this.lblPostoji.Name = "lblPostoji";
+            this.lblPostoji.Size = new System.Drawing.Size(101, 13);
+            this.lblPostoji.TabIndex = 23;
+            this.lblPostoji.Text = "Korisnik već postoji!";
+            this.lblPostoji.Visible = false;
+            // 
             // frmRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 391);
+            this.Controls.Add(this.lblPostoji);
             this.Controls.Add(this.lblZnakovi);
             this.Controls.Add(this.lblLozinka);
             this.Controls.Add(this.lblEmail);
@@ -287,6 +301,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegistration";
             this.Text = "frmRegistration";
             this.Load += new System.EventHandler(this.frmRegistration_Load);
@@ -320,5 +335,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblZnakovi;
+        private System.Windows.Forms.Label lblPostoji;
     }
 }

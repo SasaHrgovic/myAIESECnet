@@ -24,9 +24,7 @@ namespace Logic
 
         public static bool CheckEmail(string email)
         {
-            Regex r = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-            Match m = r.Match("abc@gmail.com");
-            if (m.Success) return true;
+            if (email.Contains("@")) return true;
             else return false;
         }
 
