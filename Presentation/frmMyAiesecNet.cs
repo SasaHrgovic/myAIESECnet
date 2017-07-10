@@ -67,7 +67,7 @@ namespace Presentation
 
         private void frmMyAiesecNet_Load(object sender, EventArgs e)
         {
-        
+            KeyPreview = true;
             if (Session.roleId == 2 || Session.roleId == 3)
             {
                 lblCommitties.Visible = false;
@@ -172,6 +172,25 @@ namespace Presentation
         {
             LoginLogic.LogOut();
             this.Close();
+        }
+
+        private void frmMyAiesecNet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.F1)
+            {
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17006/wiki/Korisni%C4%8Dka-dokumentacija");
+            }
+            
+           
+        }
+
+        private void frmMyAiesecNet_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                //MessageBox.Show("radi");
+                System.Diagnostics.Process.Start("https://github.com/foivz/r17006/wiki/Korisni%C4%8Dka-dokumentacija");
+            }
         }
     }
 }
