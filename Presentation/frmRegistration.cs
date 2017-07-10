@@ -73,14 +73,15 @@ namespace Presentation
         {
             if (RegistrationLogic.CheckExistingEmail(txtEmail.Text))
             {
-                lblEmail.Visible = false;
+                lblPostoji.Visible = true;
+                txtEmail.Clear();
+                return false;
+            }
+            else
+            {
+                lblPostoji.Visible = false;               
                 return true;
-            } 
-            else lblEmail.Visible = true;
-           
-
-            txtEmail.Clear();
-            return false;
+            }
         }
 
 
