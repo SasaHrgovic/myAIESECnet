@@ -39,8 +39,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsers = new System.Windows.Forms.TextBox();
             this.chkStart = new System.Windows.Forms.CheckBox();
+            this.lbxUsers = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -143,12 +144,13 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Izvršitelji";
             // 
-            // textBox1
+            // txtUsers
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 219);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(384, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtUsers.Location = new System.Drawing.Point(16, 219);
+            this.txtUsers.Name = "txtUsers";
+            this.txtUsers.Size = new System.Drawing.Size(384, 20);
+            this.txtUsers.TabIndex = 12;
+            this.txtUsers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsers_KeyDown);
             // 
             // chkStart
             // 
@@ -160,14 +162,23 @@
             this.chkStart.Text = "Odmah započni";
             this.chkStart.UseVisualStyleBackColor = true;
             // 
+            // lbxUsers
+            // 
+            this.lbxUsers.FormattingEnabled = true;
+            this.lbxUsers.Location = new System.Drawing.Point(16, 245);
+            this.lbxUsers.Name = "lbxUsers";
+            this.lbxUsers.Size = new System.Drawing.Size(384, 95);
+            this.lbxUsers.TabIndex = 14;
+            // 
             // frmAddActivity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(412, 431);
+            this.Controls.Add(this.lbxUsers);
             this.Controls.Add(this.chkStart);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCancel);
@@ -199,7 +210,8 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsers;
         private System.Windows.Forms.CheckBox chkStart;
+        private System.Windows.Forms.ListBox lbxUsers;
     }
 }
