@@ -24,9 +24,6 @@ namespace Logic
 
         public static bool CheckEmail(string email)
         {
-            
-            //Regex r = new Regex(@"");
-            //Match m = r.Match(email);
             if (email.Contains("@")) return true;
             else return false;
         }
