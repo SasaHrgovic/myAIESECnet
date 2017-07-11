@@ -28,8 +28,7 @@ namespace Presentation.PositionViews
 
         private void DisplayTeams()
         {
-            TeamLogic t = new TeamLogic();
-            cboTeam.DataSource = t.Get();
+            cboTeam.DataSource = TeamLogic.Get();
             cboTeam.DisplayMember = "Name";
             cboTeam.ValueMember = "Id";
         }

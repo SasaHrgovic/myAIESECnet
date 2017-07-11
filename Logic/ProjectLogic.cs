@@ -18,6 +18,15 @@ namespace Logic
             }
         }
 
+        public static List<Project> GetByTeamId(int teamId)
+        {
+            using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
+            {
+                List<Project> projects = db.Teams.Where(y => y.Id == teamId).SelectMany(x => x.TeamsProjects.Select(z => z.Project)).ToList();
+                return projects;
+            }
+        }
+
         public static void Add(Project newProject)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())

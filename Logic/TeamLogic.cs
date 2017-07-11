@@ -14,13 +14,12 @@ namespace Logic
         private List<User> _currentMembers = null;
         private List<User> _usersToAdd = new List<User>();
         private List<User> _usersToDelete = new List<User>();
-        public List<Team> Get()
+        public static List<Team> Get()
         {
             using(MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
                 List<Team> teams = db.Teams.Include("TeamsProjects").ToList();
                 return teams;
-                
             }
         }
 
@@ -31,7 +30,6 @@ namespace Logic
                 db.Teams.Attach(t);
                 List<User> users = t.UsersTeams.Select(y => y.User).ToList();
                 return users;
-
             }
         }
 

@@ -54,12 +54,12 @@ namespace Logic
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
+                db.Activities.Attach(newActivity);
                 if (usersToActivity != null)
                 {
                     _usersToAdd = usersToActivity;
                     newActivity = AddActivityMembers(newActivity);
                 }
-                db.Activities.Attach(newActivity);
                 db.Activities.Add(newActivity);
                 db.SaveChanges();
             }
@@ -74,6 +74,9 @@ namespace Logic
                 db.Activities.Attach(activityToUpdate);
                 activityToUpdate.Name = newActivity.Name;
                 activityToUpdate.Description = newActivity.Description;
+                activityToUpdate.TeamId = newActivity.TeamId;
+                activityToUpdate.ProjectId = newActivity.ProjectId;
+
                 if (usersToActivity != null)
                 {
                     _usersToDelete = _currentMembers.Except(usersToActivity, new UserListEqualityComparer()).ToList();
@@ -88,12 +91,14 @@ namespace Logic
             }
         }
 
-        public static void Delete(Project activityToUpdate)
+        public static void Delete(Activity activityToUpdate)
         {
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
-                db.Projects.Attach(activityToUpdate);
-                db.Projects.Remove(activityToUpdate);
+                db.Activities.Attach(activityToUpdate);
+                List<UserActivity> ua = activityToUpdate.UsersActivities.ToList();
+                db.UsersActivities.RemoveRange(ua);
+                db.Activities.Remove(activityToUpdate);
                 db.SaveChanges();
             }
         }

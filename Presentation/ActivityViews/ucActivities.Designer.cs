@@ -34,7 +34,6 @@
             this.btnAddActivity = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvActivities = new System.Windows.Forms.DataGridView();
-            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +45,7 @@
             this.teamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -104,8 +103,7 @@
             this.teamIdDataGridViewTextBoxColumn,
             this.teamDataGridViewTextBoxColumn,
             this.projectIdDataGridViewTextBoxColumn,
-            this.projectDataGridViewTextBoxColumn,
-            this.usersDataGridViewTextBoxColumn});
+            this.projectDataGridViewTextBoxColumn});
             this.dgvActivities.DataSource = this.activityBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -121,10 +119,7 @@
             this.dgvActivities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvActivities.Size = new System.Drawing.Size(1010, 200);
             this.dgvActivities.TabIndex = 6;
-            // 
-            // activityBindingSource
-            // 
-            this.activityBindingSource.DataSource = typeof(Data.Activity);
+            this.dgvActivities.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvActivities_MouseClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -196,12 +191,9 @@
             this.projectDataGridViewTextBoxColumn.Name = "projectDataGridViewTextBoxColumn";
             this.projectDataGridViewTextBoxColumn.Visible = false;
             // 
-            // usersDataGridViewTextBoxColumn
+            // activityBindingSource
             // 
-            this.usersDataGridViewTextBoxColumn.DataPropertyName = "Users";
-            this.usersDataGridViewTextBoxColumn.HeaderText = "Users";
-            this.usersDataGridViewTextBoxColumn.Name = "usersDataGridViewTextBoxColumn";
-            this.usersDataGridViewTextBoxColumn.Visible = false;
+            this.activityBindingSource.DataSource = typeof(Data.Activity);
             // 
             // ucActivities
             // 

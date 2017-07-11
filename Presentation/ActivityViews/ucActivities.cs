@@ -54,5 +54,36 @@ namespace Presentation.ActivityViews
             ShowActivities();
             ActivitiesTimer.SetActivitiesList();
         }
+
+        private void m_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ToolStripItem item = e.ClickedItem;
+            string itemName = item.ToString();
+            if (itemName == "Izbriši")
+            {
+                ActivityLogic.Delete(activityBindingSource.Current as Activity);
+                ShowActivities();
+            }
+        }
+
+        private void dgvActivities_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgvActivities.HitTest(e.X, e.Y);
+                dgvActivities.ClearSelection();
+                dgvActivities.Rows[hti.RowIndex].Selected = true;
+                activityBindingSource.Position = hti.RowIndex;
+
+                ContextMenuStrip m = new ContextMenuStrip();
+                m.Items.Add("Započni");
+                m.Items.Add("Završi");
+                m.Items.Add("Izbriši");
+
+                m.Show(dgvActivities, new Point(e.X, e.Y));
+
+                m.ItemClicked += new ToolStripItemClickedEventHandler(m_ItemClicked);
+            }
+        }
     }
 }

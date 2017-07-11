@@ -24,5 +24,6 @@ namespace Data
         public DbSet<MeetingType> MeetingTypes { get; set; }
         public DbSet<MeetingUser> MeetingsUsers { get; set; }
         public DbSet<UserTeam> UsersTeams { get; set; }
+        public DbSet<UserActivity> UsersActivities { get; set; }
     }
 }
