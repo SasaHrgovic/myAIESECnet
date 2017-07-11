@@ -26,20 +26,19 @@ namespace Data
         public virtual ICollection<UserRole> UsersRoles { get; set; }
         public virtual Committee Committee { get; set; }
         public int CommitteeId { get; set; }
-        public virtual ICollection<Activity> Activities { get; set; }
         public virtual ICollection<UserTeam> UsersTeams { get; set; }
         public virtual ICollection<MeetingUser> MeetingsUsers { get; set; }
         public virtual ICollection<ConferenceUser> ConferencesUsers { get; set; }
+        public virtual ICollection<UserActivity> UsersActivities { get; set; }
         public string FullName { get { return Name + " " + Surname; } }
 
         public User()
         {
             UsersRoles = new HashSet<UserRole>();
-            Activities = new HashSet<Activity>();
             UsersTeams = new HashSet<UserTeam>();
             MeetingsUsers = new HashSet<MeetingUser>();
             ConferencesUsers = new HashSet<ConferenceUser>();
-            
+            UsersActivities = new HashSet<UserActivity>();
         }
     }
 }

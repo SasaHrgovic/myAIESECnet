@@ -14,16 +14,19 @@ namespace Presentation.ActivityViews
 {
     public partial class frmAddActivity : Form
     {
+        private Activity _activityToUpdate;
         private List<User> _users;
         private List<User> _usersToActivity;
         private AutoCompleteStringCollection _usersAutoComplete;
         public frmAddActivity()
         {
             InitializeComponent();
-            _users = UserLogic.GetCommitteMembers();
-            _usersToActivity = new List<User>();
-            _usersAutoComplete = new AutoCompleteStringCollection();
-            InitializeAutoComplete();
+        }
+
+        public frmAddActivity(Activity a)
+        {
+            InitializeComponent();
+            _activityToUpdate = a;
         }
 
         private void InitializeAutoComplete()
@@ -50,7 +53,11 @@ namespace Presentation.ActivityViews
             a.Deadline = ddl;
             a.TeamId = 2;
 
-            ActivityLogic.Add(a, _usersToActivity);
+            if (_activityToUpdate == null)
+                ActivityLogic.Add(a, _usersToActivity);
+            else
+                ActivityLogic.Update(_activityToUpdate, a, _usersToActivity);
+            
             Close();
         }
 
@@ -72,6 +79,28 @@ namespace Presentation.ActivityViews
                     _usersToActivity.Add(u);
                     ShowActivityUsers();
                 }
+            }
+        }
+
+        private void frmAddActivity_Load(object sender, EventArgs e)
+        {
+            _users = UserLogic.GetCommitteMembers();
+            _usersAutoComplete = new AutoCompleteStringCollection();
+            InitializeAutoComplete();
+
+            if (_activityToUpdate != null)
+            {
+                _usersToActivity = ActivityLogic.GetActivityMembers(_activityToUpdate);
+                ShowActivityUsers();
+
+                txtName.Text = _activityToUpdate.Name;
+                txtDescription.Text = _activityToUpdate.Description;
+                dtpDeadlineDate.Value = _activityToUpdate.Deadline.Value;
+                dtpDeadlineTime.Value = _activityToUpdate.Deadline.Value;
+            }
+            else
+            {
+                _usersToActivity = new List<User>();
             }
         }
     }

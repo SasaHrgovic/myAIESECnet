@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
+using Data;
 
 namespace Presentation.ActivityViews
 {
@@ -48,7 +49,7 @@ namespace Presentation.ActivityViews
 
         private void btnUpdateActivity_Click(object sender, EventArgs e)
         {
-            frmAddActivity f = new frmAddActivity();
+            frmAddActivity f = new frmAddActivity(activityBindingSource.Current as Activity);
             f.ShowDialog();
             ShowActivities();
             ActivitiesTimer.SetActivitiesList();

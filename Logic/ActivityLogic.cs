@@ -35,8 +35,7 @@ namespace Logic
         {
             foreach (User activityMember in _usersToDelete)
             {
-                User ut = activity.Users.Where(y => y == activityMember).Single();
-                activity.Users.Remove(ut);
+                activity.Users.Remove(activityMember);
             }
             return activity;
         }
@@ -65,14 +64,38 @@ namespace Logic
             }
         }
 
-        public static void Update(Activity activityToUpdate, Project newActivity)
+        public static void Update(Activity activityToUpdate, Activity newActivity, List<User> usersToActivity)
         {
             _currentMembers = GetActivityMembers(activityToUpdate);
+            //_currentMembers = activityToUpdate.Users.ToList();
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
                 db.Activities.Attach(activityToUpdate);
+                
                 activityToUpdate.Name = newActivity.Name;
                 activityToUpdate.Description = newActivity.Description;
+                if (usersToActivity != null)
+                {
+                    _usersToDelete = _currentMembers.Except(usersToActivity, new UserListEqualityComparer()).ToList();
+                    if (_usersToDelete.Count != 0)
+                    {
+                        foreach (User activityMember in _usersToDelete)
+                        {
+                            activityToUpdate.Users.Remove(activityMember);
+                        }
+                    }
+
+                    _usersToAdd = usersToActivity.Except(_currentMembers, new UserListEqualityComparer()).ToList();
+                    if (_usersToAdd.Count != 0)
+                    {
+                        foreach (User activityMember in _usersToAdd)
+                        {
+                            activityToUpdate.Users.Add(activityMember);
+                        }
+                    }
+                        //activityToUpdate = AddActivityMembers(activityToUpdate);
+                }
+                
                 db.SaveChanges();
             }
         }

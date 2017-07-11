@@ -23,11 +23,11 @@ namespace Data
         public virtual Team Team { get; set; }
         public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserActivity> UsersActivities { get; set; }
 
         public Activity()
         {
-            Users = new HashSet<User>();
+            UsersActivities = new HashSet<UserActivity>();
         }
     }
 }
