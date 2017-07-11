@@ -26,7 +26,7 @@ namespace Logic
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
                 db.Activities.Attach(a);
-                List<User> users = a.Users.ToList();
+                List<User> users = a.UsersActivities.Select(y => y.User).ToList();
                 return users;
             }
         }
@@ -35,7 +35,8 @@ namespace Logic
         {
             foreach (User activityMember in _usersToDelete)
             {
-                activity.Users.Remove(activityMember);
+                UserActivity ua = activity.UsersActivities.Where(y => y.UserId == activityMember.Id).Single();
+                activity.UsersActivities.Remove(ua);
             }
             return activity;
         }
@@ -44,7 +45,7 @@ namespace Logic
         {
             foreach (User activityMember in _usersToAdd)
             {
-                activity.Users.Add(activityMember);
+                activity.UsersActivities.Add(new UserActivity() { ActivityId = activity.Id, UserId = activityMember.Id });
             }
             return activity;
         }
@@ -67,35 +68,22 @@ namespace Logic
         public static void Update(Activity activityToUpdate, Activity newActivity, List<User> usersToActivity)
         {
             _currentMembers = GetActivityMembers(activityToUpdate);
-            //_currentMembers = activityToUpdate.Users.ToList();
+            
             using (MyAiesecNetDbContext db = new MyAiesecNetDbContext())
             {
                 db.Activities.Attach(activityToUpdate);
-                
                 activityToUpdate.Name = newActivity.Name;
                 activityToUpdate.Description = newActivity.Description;
                 if (usersToActivity != null)
                 {
                     _usersToDelete = _currentMembers.Except(usersToActivity, new UserListEqualityComparer()).ToList();
                     if (_usersToDelete.Count != 0)
-                    {
-                        foreach (User activityMember in _usersToDelete)
-                        {
-                            activityToUpdate.Users.Remove(activityMember);
-                        }
-                    }
+                        activityToUpdate = DeleteActivityMembers(activityToUpdate);
 
                     _usersToAdd = usersToActivity.Except(_currentMembers, new UserListEqualityComparer()).ToList();
                     if (_usersToAdd.Count != 0)
-                    {
-                        foreach (User activityMember in _usersToAdd)
-                        {
-                            activityToUpdate.Users.Add(activityMember);
-                        }
-                    }
-                        //activityToUpdate = AddActivityMembers(activityToUpdate);
+                        activityToUpdate = AddActivityMembers(activityToUpdate);
                 }
-                
                 db.SaveChanges();
             }
         }
