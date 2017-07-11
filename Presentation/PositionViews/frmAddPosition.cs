@@ -23,6 +23,7 @@ namespace Presentation.PositionViews
 
         public frmAddPosition(Position positionToUpdate)
         {
+            InitializeComponent();
             _positionToUpdate = positionToUpdate;
         }
 
